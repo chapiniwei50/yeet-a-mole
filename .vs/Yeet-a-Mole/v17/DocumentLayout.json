@@ -1,9 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\CourseMaterial\\CIS 5680\\Project 2\\Yeet-a-Mole\\",
+  "WorkspaceRootPath": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\CourseMaterial\\CIS 5680\\Project 2\\Yeet-a-Mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Assets\\New\\Script\\MainMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\MainMenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -19,10 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Assets\\New\\Script\\MainMenu.cs",
+              "RelativeDocumentMoniker": "Assets\\New\\Script\\MainMenu.cs",
+              "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Assets\\New\\Script\\MainMenu.cs",
+              "RelativeToolTip": "Assets\\New\\Script\\MainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T20:03:05.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "XRGrabInteractable.cs",
-              "DocumentMoniker": "D:\\CourseMaterial\\CIS 5680\\Project 2\\Yeet-a-Mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
+              "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
-              "ToolTip": "D:\\CourseMaterial\\CIS 5680\\Project 2\\Yeet-a-Mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
+              "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
               "RelativeToolTip": "Library\\PackageCache\\com.unity.xr.interaction.toolkit@76258c00be3e\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs",
               "ViewState": "AgIAAHcBAAAAAAAAAAAAACYAAABwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
