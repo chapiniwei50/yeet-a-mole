@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5545987848718179505}
   m_Layer: 0
   m_Name: MoleBall_Red
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 5486510734528527799}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.24689, y: 0.09389, z: -11.12753}
+  m_LocalPosition: {x: 2.24689, y: 0, z: -11.12753}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -284,3 +284,4 @@ MonoBehaviour:
   damage: 2
   normalMat: {fileID: 2100000, guid: 8a879c9c33b3f554bb41f5f2fdf312ce, type: 2}
   readyMat: {fileID: 2100000, guid: 6074e92c3ae521449aabb58148444aca, type: 2}
+  yeetMat: {fileID: 2100000, guid: 1a6c4fd2c89637a4a8169a294c4e5d3a, type: 2}

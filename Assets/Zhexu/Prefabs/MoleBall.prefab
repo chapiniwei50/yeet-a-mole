@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5545987848718179505}
   m_Layer: 0
   m_Name: MoleBall
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -284,3 +284,4 @@ MonoBehaviour:
   damage: 1
   normalMat: {fileID: 2100000, guid: 2520d997ad8a34d4bbd0f39ca42d75d4, type: 2}
   readyMat: {fileID: 2100000, guid: 6074e92c3ae521449aabb58148444aca, type: 2}
+  yeetMat: {fileID: 2100000, guid: 1a6c4fd2c89637a4a8169a294c4e5d3a, type: 2}

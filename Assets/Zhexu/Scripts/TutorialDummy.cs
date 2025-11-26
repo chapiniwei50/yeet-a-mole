@@ -23,8 +23,8 @@ public class TutorialDummy : MonoBehaviour
     {
         MoleBall ball = collision.gameObject.GetComponent<MoleBall>();
         
-        // Condition: Must be a MoleBall and must be in the ReadyToYeet state
-        if (ball != null && ball.currentState == MoleBall.BallState.ReadyToYeet)
+        // Condition: Must be a MoleBall and must be in the Yeeted state
+        if (ball != null && ball.currentState == MoleBall.BallState.Yeeted)
         {
             TakeDamage(ball.damage);
             // Destroy the ball after hitting to prevent secondary damage

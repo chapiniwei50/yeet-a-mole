@@ -6,6 +6,13 @@ TagManager:
   tags:
   - Anchor
   - Ground
+  - Bat
+  - Shovel
+  - Racket
+  - Mole
+  - Ball
+  - Enemy
+  - Enemy_Bullet
   layers:
   - Default
   - TransparentFX

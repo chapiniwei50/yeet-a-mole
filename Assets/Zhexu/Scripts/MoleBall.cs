@@ -1,8 +1,11 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 public class MoleBall : MonoBehaviour
 {
-    public enum BallState { Spawning, Held, Thrown, ReadyToYeet }
+    public enum BallState { Spawning, Held, Thrown, ReadyToYeet, Yeeted }
     
     [Header("Status")]
     public BallState currentState = BallState.Spawning;
@@ -11,15 +14,17 @@ public class MoleBall : MonoBehaviour
     [Header("Visuals")]
     public Material normalMat; // Normal brown color
     public Material readyMat;  // Glowing yellow color (indicates it's ready to Yeet)
+    public Material yeetMat;   // Light blue color (indicates it's yeeted by the racket)
 
     private Rigidbody rb;
-    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable interactable;
+    private XRGrabInteractable interactable;
     private Renderer rend;
+    private Coroutine pullRoutine;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        interactable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        interactable = GetComponent<XRGrabInteractable>();
         rend = GetComponent<Renderer>();
 
         // Subscribe to grab and release events
@@ -56,5 +61,13 @@ public class MoleBall : MonoBehaviour
         // Visual feedback: change color
         if (readyMat != null) rend.material = readyMat;
         
+    }
+
+    public void yeeted()
+    {
+        currentState = BallState.Yeeted;
+
+        // Visual feedback: change color
+        if (yeetMat != null) rend.material = yeetMat;
     }
 }
