@@ -21,6 +21,18 @@ public class MoleBall : MonoBehaviour
     private Renderer rend;
     private Coroutine pullRoutine;
 
+    void Start()
+    {
+        if (rend == null) rend = GetComponent<Renderer>();
+
+        if (normalMat != null)
+        {
+            rend.material = normalMat;
+        }
+        
+        currentState = BallState.Spawning;
+    }
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();

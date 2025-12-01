@@ -130,8 +130,12 @@ MonoBehaviour:
   isExplosive: 1
   moleBall: {fileID: 5486510734528527799, guid: 97411c2cbd05253418dc7174e2673408, type: 3}
   worldVariable: {fileID: 0}
+  moleRenderer: {fileID: 2625376107355967551}
   Explosion: {fileID: 8300000, guid: 515a3134d3758e84f8a6daf5e6d1ef33, type: 3}
   explodeEffect: {fileID: 3734461737148476403, guid: 19375a234a4194947892f03d70b684fc, type: 3}
+  normalColor: {r: 1, g: 0, b: 0, a: 1}
+  flashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  explosionTime: 10
 --- !u!82 &7355629711850168154
 AudioSource:
   m_ObjectHideFlags: 0
