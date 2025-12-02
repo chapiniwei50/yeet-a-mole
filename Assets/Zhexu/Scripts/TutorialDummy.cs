@@ -4,17 +4,34 @@ using System.Collections;
 public class TutorialDummy : MonoBehaviour
 {
     public int hp = 3;
-    public bool isShooter = false; // Is this the shooter enemy in Room 4?
-    public GameObject projectilePrefab; // Projectile Prefab
-    public Transform firePoint; 		 // Firing position
+    public bool isShooter = false;
+    public GameObject projectilePrefab;
+    public Transform firePoint;
 
-    private Renderer rend;
-    private Color originalColor;
+    [Header("Shooting Settings")]
+    public float shootInterval = 3f;
 
-    void Start()
+    [Header("Sound Settings")]
+    public AudioClip shootSound;  // Add this for shooting sound
+    protected AudioSource audioSource;  // Add this
+
+    protected Renderer rend;
+    protected Color originalColor;
+
+    protected virtual void Start()
     {
         rend = GetComponent<Renderer>();
-        if(rend) originalColor = rend.material.color;
+        if (rend) originalColor = rend.material.color;
+
+        // Initialize AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.spatialBlend = 1.0f; // 3D sound
+            audioSource.minDistance = 1.0f;
+            audioSource.maxDistance = 50.0f;
+        }
 
         if (isShooter) StartCoroutine(ShootRoutine());
     }
@@ -22,17 +39,24 @@ public class TutorialDummy : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         MoleBall ball = collision.gameObject.GetComponent<MoleBall>();
-        
-        // Condition: Must be a MoleBall and must be in the Yeeted state
+
         if (ball != null && ball.currentState == MoleBall.BallState.Yeeted)
         {
+            // For monsters, let them handle their own damage logic
+            Monster monster = this as Monster;
+            if (monster != null)
+            {
+                // Monsters will handle damage in their own scripts
+                return;
+            }
+
+            // For regular dummies, use default damage
             TakeDamage(ball.damage);
-            // Destroy the ball after hitting to prevent secondary damage
-            Destroy(ball.gameObject); 
+            Destroy(ball.gameObject);
         }
     }
 
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         hp -= damage;
         Debug.Log($"Dummy Hit! HP Left: {hp}");
@@ -44,29 +68,40 @@ public class TutorialDummy : MonoBehaviour
         }
     }
 
-    void Die()
+    protected virtual void Die()
     {
         Debug.Log("Dummy Defeated!");
         gameObject.SetActive(false);
-        // We can notify the GameManager to open the door here later
     }
 
-    IEnumerator FlashRed()
+    protected IEnumerator FlashRed()
     {
-        if(rend) rend.material.color = Color.red;
+        if (rend) rend.material.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        if(rend) rend.material.color = originalColor;
+        if (rend) rend.material.color = originalColor;
     }
 
-    IEnumerator ShootRoutine()
+    protected virtual IEnumerator ShootRoutine()
     {
         while (hp > 0)
         {
-            yield return new WaitForSeconds(3f); // Shoot once every 3 seconds
-            if (projectilePrefab && firePoint)
+            yield return new WaitForSeconds(shootInterval);
+            Shoot();
+        }
+    }
+
+    // New: Separate method for shooting that can be overridden
+    protected virtual void Shoot()
+    {
+        if (projectilePrefab && firePoint)
+        {
+            // Play shooting sound if available
+            if (shootSound != null && audioSource != null)
             {
-                Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+                audioSource.PlayOneShot(shootSound);
             }
+
+            Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
         }
     }
 }

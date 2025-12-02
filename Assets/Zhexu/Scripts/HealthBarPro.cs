@@ -13,17 +13,28 @@ public class HealthBarPro : MonoBehaviour
     [Header("Settings")]
     public int maxHealth = 5;
     public float smoothSpeed = 5f; // Smooth animation speed for HP bar
-    
+
     [Header("Animation")]
     public Transform container; // Object to apply shake animation (usually Canvas or BG)
 
+    [Header("Sound")]
+    public AudioClip hurtSound; // Sound to play when player takes damage
+
     private float targetFillAmount;
     private int currentDisplayHealth;
+    private AudioSource audioSource; // Audio source for hurt sounds
 
     void Start()
     {
         if (worldVariable == null)
             worldVariable = FindAnyObjectByType<WorldVariable>();
+
+        // Get or add AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
 
         // Initialization
         currentDisplayHealth = worldVariable.playerHealth;
@@ -46,6 +57,7 @@ public class HealthBarPro : MonoBehaviour
             if (realHealth < currentDisplayHealth)
             {
                 StartCoroutine(ShakeEffect()); // Trigger hit animation
+                PlayHurtSound(); // Play hurt sound
             }
 
             currentDisplayHealth = realHealth;
@@ -64,10 +76,19 @@ public class HealthBarPro : MonoBehaviour
         {
             // Display format: "HP 3/5"
             hpText.text = $"HP {currentDisplayHealth}/{maxHealth}";
-            
+
             // Only cartoon fonts with outline look good
             // if (currentDisplayHealth <= 1) hpText.color = Color.red; // Low HP turns red
             // else hpText.color = Color.white;
+        }
+    }
+
+    // Play hurt sound when player takes damage
+    void PlayHurtSound()
+    {
+        if (hurtSound != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
         }
     }
 

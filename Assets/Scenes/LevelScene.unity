@@ -496,6 +496,52 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
+--- !u!1 &366551306
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 366551308}
+  - component: {fileID: 366551307}
+  m_Layer: 0
+  m_Name: SceneController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &366551307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366551306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cc685aeb2cd33041abb3af7679fdfc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneController
+  gameOverSound: {fileID: 8300000, guid: c7d056f421fecbc47b269f88c8a2a39e, type: 3}
+  soundVolume: 1
+--- !u!4 &366551308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 366551306}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.94266, y: 0, z: 0.36722}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &381473015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7526424835796752588, guid: cdd8d65603c7abd4f94b3d6517596370, type: 3}
@@ -9386,6 +9432,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856944554}
   m_CullTransparentMesh: 1
+--- !u!1 &965416258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965416260}
+  - component: {fileID: 965416259}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965416259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965416258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c710cef6502c7bd4e89e6fbd04b4c588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelWaveManager
+  waves:
+  - waveNumber: 1
+    basicCount: 3
+    spitterCount: 0
+    tankCount: 0
+    spawnInterval: 5
+  - waveNumber: 2
+    basicCount: 2
+    spitterCount: 2
+    tankCount: 0
+    spawnInterval: 5
+  - waveNumber: 3
+    basicCount: 2
+    spitterCount: 2
+    tankCount: 2
+    spawnInterval: 8
+  walkerPrefab: {fileID: 8158976249141679209, guid: 37b4bb17bf2f1e64bb7adad855f3809e, type: 3}
+  spitterPrefab: {fileID: 8158976249141679209, guid: b176d97097b006b4e8508b793bf11533, type: 3}
+  tankPrefab: {fileID: 8158976249141679209, guid: 6843effa24f1c5a42bf1678fccc1c269, type: 3}
+  pipe: {fileID: 524660108}
+  spawnDistance: 20
+  spawnHeight: 0.5
+  timeBetweenWaves: 5
+  waveStartSound: {fileID: 8300000, guid: 512bf48f457be794db88b2ac7533ab55, type: 3}
+  waveCompleteSound: {fileID: 8300000, guid: 88831b72210ece349acb4aeda019f698, type: 3}
+--- !u!4 &965416260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965416258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.40359, y: 0, z: 1.09641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041023786
 GameObject:
   m_ObjectHideFlags: 0
@@ -10937,6 +11052,7 @@ MonoBehaviour:
   maxHealth: 5
   smoothSpeed: 5
   container: {fileID: 1669557071}
+  hurtSound: {fileID: 8300000, guid: 4c3439e48a1556a499da629b419ce420, type: 3}
 --- !u!1 &1703568385
 GameObject:
   m_ObjectHideFlags: 0
@@ -11927,6 +12043,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
   m_PrefabInstance: {fileID: 2107228693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2129420537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129420539}
+  - component: {fileID: 2129420538}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2129420538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129420537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5167416752384e94485513c23903446c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  worldVariable: {fileID: 1832034326}
+  waveManager: {fileID: 965416259}
+--- !u!4 &2129420539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129420537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.5766, y: 0, z: 6.70093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1803398132677920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12149,3 +12311,6 @@ SceneRoots:
   - {fileID: 802261486}
   - {fileID: 524660108}
   - {fileID: 1041023787}
+  - {fileID: 965416260}
+  - {fileID: 2129420539}
+  - {fileID: 366551308}

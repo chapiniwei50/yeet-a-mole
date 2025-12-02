@@ -15,7 +15,7 @@ public class MoleBall : MonoBehaviour
     public Material normalMat; // Normal brown color
     public Material readyMat;  // Glowing yellow color (indicates it's ready to Yeet)
     public Material yeetMat;   // Light blue color (indicates it's yeeted by the racket)
-
+    public bool isExplosive = false;
     private Rigidbody rb;
     private XRGrabInteractable interactable;
     private Renderer rend;
