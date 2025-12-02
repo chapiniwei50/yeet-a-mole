@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1101597048596877429
+--- !u!1 &890590836997965832
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5644402953076135110}
-  - component: {fileID: 982305031254367918}
-  - component: {fileID: 3024526984672119659}
+  - component: {fileID: 1378381481501922928}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1378381481501922928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890590836997965832}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.13, y: 0.71, z: 1.055}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 820401406454420123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6876651868519094972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 820401406454420123}
+  - component: {fileID: 3244378658431379605}
+  - component: {fileID: 5971782749245206152}
+  - component: {fileID: 6575511540679085717}
   m_Layer: 0
   m_Name: spitterMonster
   m_TagString: Untagged
@@ -18,30 +50,29 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5644402953076135110
+--- !u!4 &820401406454420123
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101597048596877429}
+  m_GameObject: {fileID: 6876651868519094972}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 0, z: 7.141}
+  m_LocalPosition: {x: 12.54228, y: 0, z: 4.35882}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1235375741816443525}
-  - {fileID: 8289265539165754389}
+  - {fileID: 1378381481501922928}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &982305031254367918
+--- !u!136 &3244378658431379605
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101597048596877429}
+  m_GameObject: {fileID: 6876651868519094972}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -57,14 +88,14 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 1.2, y: 0.8, z: 0.5}
---- !u!114 &3024526984672119659
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5971782749245206152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1101597048596877429}
+  m_GameObject: {fileID: 6876651868519094972}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2e3d1a34d676b8745bb907aae38c087a, type: 3}
@@ -73,7 +104,7 @@ MonoBehaviour:
   hp: 1
   isShooter: 1
   projectilePrefab: {fileID: 6750932881677074867, guid: 214cbef624410b94787f421e0977805b, type: 3}
-  firePoint: {fileID: 8289265539165754389}
+  firePoint: {fileID: 1378381481501922928}
   shootInterval: 3
   shootSound: {fileID: 8300000, guid: 8462e964cde3a5741838040a77124e6c, type: 3}
   moveSpeed: 1.5
@@ -97,96 +128,21 @@ MonoBehaviour:
   stoppingDistance: 10
   spitterIdleSounds: []
   spitterMovementSounds: []
---- !u!1 &5783627471991469658
-GameObject:
+--- !u!114 &6575511540679085717
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8289265539165754389}
-  m_Layer: 0
-  m_Name: FirePoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8289265539165754389
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5783627471991469658}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.13, y: 0.71, z: 1.055}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5644402953076135110}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8475517459961594115
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5644402953076135110}
-    m_Modifications:
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.138
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8065992167300729148, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-      propertyPath: m_Name
-      value: Burrow@Walk Forward In Place
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
---- !u!4 &1235375741816443525 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
-  m_PrefabInstance: {fileID: 8475517459961594115}
-  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6876651868519094972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b0e5053ac314a4f893d0a994960770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpitterAnimationController
+  walkAnimationFBX: {fileID: 5605183403481175014, guid: 1b6820d8f21267e4fb16f7b45c13c2d3, type: 3}
+  shootAnimationFBX: {fileID: 2035202103712737939, guid: 2be4f0f1f0784eb4f96b18ed5d3d304a, type: 3}
+  dieAnimationFBX: {fileID: 919132149155446097, guid: 0cf115c83a2812b44b83b4f93560aad5, type: 3}
+  shootAnimationLength: 1
+  deathAnimationLength: 2
+  returnToWalkDelay: 0.5

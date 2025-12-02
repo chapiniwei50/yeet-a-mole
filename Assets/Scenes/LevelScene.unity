@@ -161,6 +161,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -8960,6 +8964,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -9287,6 +9295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -9463,9 +9475,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelWaveManager
   waves:
   - waveNumber: 1
-    basicCount: 1
+    basicCount: 3
     spitterCount: 0
-    tankCount: 1
+    tankCount: 0
     spawnInterval: 5
   - waveNumber: 2
     basicCount: 2
@@ -9478,7 +9490,7 @@ MonoBehaviour:
     tankCount: 2
     spawnInterval: 8
   walkerPrefab: {fileID: 1101597048596877429, guid: 28a6d2021ef1ad44e9ecb564f4bd4490, type: 3}
-  spitterPrefab: {fileID: 1101597048596877429, guid: cb86d8bdacb385d418574a9112e7480a, type: 3}
+  spitterPrefab: {fileID: 6876651868519094972, guid: cb86d8bdacb385d418574a9112e7480a, type: 3}
   tankPrefab: {fileID: 1101597048596877429, guid: 9dd4d918d7358dc40abe89d6b782a156, type: 3}
   pipe: {fileID: 524660108}
   spawnDistance: 20
@@ -9943,6 +9955,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -10865,6 +10881,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -11977,6 +11997,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: moleNormalPrefab
+      value: 
+      objectReference: {fileID: 7215979391716200548, guid: 50710955e8913604e8a463fe881ef2c9, type: 3}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 

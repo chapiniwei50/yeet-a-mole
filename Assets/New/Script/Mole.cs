@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using System.Collections;
 
 public class Mole : MonoBehaviour
 {
@@ -10,120 +11,175 @@ public class Mole : MonoBehaviour
 
     [Header("References")]
     public WorldVariable worldVariable;
-    // Added: need to get renderer for changing color
-    public Renderer moleRenderer; 
+
+    [Header("Animation")]
+    public GameObject moleAppearAnimationFBX;
+    public GameObject moleIdleAnimationFBX;
+
+    [Header("Glow Settings - For Blinking")]
+    public GameObject glowEffectPrefab;  // Particle system or glow sphere
+    public Color normalGlowColor = Color.red;
+    public Color warningGlowColor = Color.yellow;
+    public float explosionTime = 10.0f;
 
     [Header("Audio")]
     public AudioClip Explosion;
+    public AudioClip HitSound;
 
     [Header("VFX")]
     public GameObject explodeEffect;
 
-    [Header("Visual Settings (Blinking)")]
-    public Color normalColor = Color.red;   // Red color for normal state
-    public Color flashColor = Color.yellow; // Bright color for flashing (or white)
-    public float explosionTime = 10.0f;     // Explosion time, aligned with logic below
-
+    // Private references
+    private MoleAnimationController animationController;
+    private GameObject glowEffect;
+    private Renderer glowRenderer;
     private float timer = 0f;
-    private Color originalColor; // Store original color
+    private bool isBlinking = false;
 
     void Start()
     {
-        // Auto-get renderer component
-        if (moleRenderer == null) moleRenderer = GetComponent<Renderer>();
-        
-        // Record original color (prevent wrong color after blinking)
-        if (moleRenderer != null)
+        // Get or add animation controller
+        animationController = GetComponent<MoleAnimationController>();
+        if (animationController == null)
         {
-            // If it's explosive, use the assigned red; normal mole uses its material's color
-            if (isExplosive) 
-                originalColor = normalColor;
-            else 
-                originalColor = moleRenderer.material.color;
+            animationController = gameObject.AddComponent<MoleAnimationController>();
+            animationController.appearAnimationFBX = moleAppearAnimationFBX;
+            animationController.idleAnimationFBX = moleIdleAnimationFBX;
+        }
+
+        // Create glow effect
+        if (glowEffectPrefab != null && isExplosive)
+        {
+            glowEffect = Instantiate(glowEffectPrefab, transform);
+            glowEffect.transform.localPosition = Vector3.zero;
+
+            // Get renderer for color changes
+            glowRenderer = glowEffect.GetComponent<Renderer>();
+            if (glowRenderer != null)
+            {
+                glowRenderer.material.color = normalGlowColor;
+            }
         }
 
         if (worldVariable == null)
         {
             worldVariable = FindAnyObjectByType<WorldVariable>();
         }
-
-        if (worldVariable == null)
-        {
-            Debug.LogError("No WorldVariable found in the scene!");
-        }
     }
 
     void Update()
     {
         timer += Time.deltaTime;
-        
+
         if (isExplosive)
         {
-            // --- Added: handle blinking logic ---
-            HandleBlinking();
+            // Update blinking speed based on timer
+            if (timer >= explosionTime - 5f && !isBlinking)
+            {
+                StartBlinking();
+            }
 
-            // original logic: explode after 10 seconds
-            if (timer > explosionTime) Explode();
-        } 
-        else 
+            if (timer > explosionTime)
+            {
+                Explode();
+            }
+        }
+        else
         {
-
             if (timer > 30.0f) Destroy(gameObject);
         }
     }
 
-    // --- Added: core blinking algorithm ---
-    void HandleBlinking()
+    void StartBlinking()
     {
-        if (moleRenderer == null) return;
+        isBlinking = true;
+        StartCoroutine(BlinkRoutine());
+    }
 
-        float baseSpeed = 2f;   // Base blinking speed
-        float maxSpeed  = 8f;  // Ultimate max speed
+    IEnumerator BlinkRoutine()
+    {
+        float baseSpeed = 2f;
+        float maxSpeed = 8f;
 
-        float blinkSpeed;
-
-        // first 5 seconds: constant baseSpeed
-        if (timer <= explosionTime - 5f)
+        while (isBlinking && glowRenderer != null)
         {
-            blinkSpeed = baseSpeed;
-        }
-        else
-        {
-            // last 5 seconds: speed up linearly
-            // timer:  explosionTime - 5  → explosionTime
-            // factor: 0 → 1
-            float factor = Mathf.InverseLerp(explosionTime - 5f, explosionTime, timer);
-            blinkSpeed = Mathf.Lerp(baseSpeed, maxSpeed, factor);
-        }
+            // Calculate current blink speed (faster as explosion approaches)
+            float blinkSpeed;
+            if (timer <= explosionTime - 5f)
+            {
+                blinkSpeed = baseSpeed;
+            }
+            else
+            {
+                float factor = Mathf.InverseLerp(explosionTime - 5f, explosionTime, timer);
+                blinkSpeed = Mathf.Lerp(baseSpeed, maxSpeed, factor);
+            }
 
-        // use PingPong to create a smooth flashing effect
-        float t = Mathf.PingPong(timer * blinkSpeed, 1f);
+            // Switch between colors
+            if (glowRenderer != null)
+            {
+                if (glowRenderer.material.color == normalGlowColor)
+                {
+                    glowRenderer.material.color = warningGlowColor;
 
-        if (t > 0.5f)
-        {
-            moleRenderer.material.color = flashColor;
-            moleRenderer.material.SetColor("_EmissionColor", flashColor * 2f); 
-        }
-        else
-        {
-            moleRenderer.material.color = normalColor;
-            moleRenderer.material.SetColor("_EmissionColor", normalColor);
+                    // Make emission glow brighter
+                    if (glowRenderer.material.HasProperty("_EmissionColor"))
+                    {
+                        glowRenderer.material.SetColor("_EmissionColor", warningGlowColor * 3f);
+                    }
+                }
+                else
+                {
+                    glowRenderer.material.color = normalGlowColor;
+                    if (glowRenderer.material.HasProperty("_EmissionColor"))
+                    {
+                        glowRenderer.material.SetColor("_EmissionColor", normalGlowColor);
+                    }
+                }
+            }
+
+            yield return new WaitForSeconds(0.5f / blinkSpeed);
         }
     }
 
-
     public void OnHit()
     {
-        if (moleBall != null) Instantiate(moleBall, transform.position, transform.rotation);
+        // Play hit sound
+        if (HitSound != null)
+        {
+            AudioSource.PlayClipAtPoint(HitSound, transform.position, 1f);
+        }
+
+        // Drop mole ball
+        if (moleBall != null)
+        {
+            Instantiate(moleBall, transform.position + Vector3.up, transform.rotation);
+        }
 
         Destroy(gameObject);
     }
 
     public void Explode()
     {
-        if (worldVariable != null) worldVariable.playerHealth -= 1;
-        if (Explosion != null) AudioSource.PlayClipAtPoint(Explosion, transform.position, 1f);
-        if (explodeEffect != null) Instantiate(explodeEffect, transform.position, Quaternion.identity);
+        isBlinking = false;
+
+        // Apply damage
+        if (worldVariable != null)
+        {
+            worldVariable.playerHealth -= 1;
+        }
+
+        // Play explosion sound
+        if (Explosion != null)
+        {
+            AudioSource.PlayClipAtPoint(Explosion, transform.position, 1f);
+        }
+
+        // Spawn explosion effect
+        if (explodeEffect != null)
+        {
+            Instantiate(explodeEffect, transform.position, Quaternion.identity);
+        }
 
         Destroy(gameObject);
     }

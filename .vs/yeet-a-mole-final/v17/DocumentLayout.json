@@ -3,6 +3,50 @@
   "WorkspaceRootPath": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\MoleAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\MoleAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Mole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Mole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\WalkerMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\MoleBall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Zhexu\\Scripts\\MoleBall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\TankMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\TankMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\SpitterMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\SpitterMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\TutorialDummy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Zhexu\\Scripts\\TutorialDummy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\WorldVariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\WorldVariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\LevelWaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\LevelWaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Library\\PackageCache\\com.unity.render-pipelines.universal@35ca8d108413\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.render-pipelines.universal@35ca8d108413\\Shaders\\Lit.shader||{3B902123-F8A7-4915-9F01-361F908088D0}"
     },
@@ -11,16 +55,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Zhexu\\Scripts\\SimpleProjectile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\MoleBall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Zhexu\\Scripts\\MoleBall.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\SceneController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\SceneController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\LevelWaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\LevelWaveManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Wave.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,32 +75,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\Monster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\TutorialDummy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Zhexu\\Scripts\\TutorialDummy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\SpitterMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\SpitterMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\TankMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\TankMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Monsters\\WalkerMonster.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\GameOverScene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\GameOverScene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\WorldVariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\WorldVariable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Mole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\New\\Script\\Mole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\MoleSpawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,6 +95,49 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "MoleAnimationController.cs",
+              "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\MoleAnimationController.cs",
+              "RelativeDocumentMoniker": "Assets\\New\\Script\\MoleAnimationController.cs",
+              "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\MoleAnimationController.cs",
+              "RelativeToolTip": "Assets\\New\\Script\\MoleAnimationController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T07:58:17.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MonsterAnimationController.cs",
+              "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs",
+              "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs",
+              "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs",
+              "RelativeToolTip": "Assets\\New\\Script\\Monsters\\MonsterAnimationController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAcwHMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T07:43:19.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WalkerAnimationController.cs",
+              "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs",
+              "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs",
+              "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs",
+              "RelativeToolTip": "Assets\\New\\Script\\Monsters\\WalkerAnimationController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAcwHMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-02T06:52:34.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Lit.shader",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Library\\PackageCache\\com.unity.render-pipelines.universal@35ca8d108413\\Shaders\\Lit.shader",
               "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.render-pipelines.universal@35ca8d108413\\Shaders\\Lit.shader",
@@ -94,12 +149,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 12,
               "Title": "SimpleProjectile.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\SimpleProjectile.cs",
               "RelativeDocumentMoniker": "Assets\\Zhexu\\Scripts\\SimpleProjectile.cs",
@@ -107,12 +158,11 @@
               "RelativeToolTip": "Assets\\Zhexu\\Scripts\\SimpleProjectile.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAAwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-02T02:34:18.463Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-02T02:34:18.463Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "GameOverScene.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\GameOverScene.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\GameOverScene.cs",
@@ -124,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 13,
               "Title": "SceneController.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\SceneController.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\SceneController.cs",
@@ -136,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 15,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\GameManager.cs",
@@ -148,7 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "MoleBall.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\MoleBall.cs",
               "RelativeDocumentMoniker": "Assets\\Zhexu\\Scripts\\MoleBall.cs",
@@ -156,71 +206,77 @@
               "RelativeToolTip": "Assets\\Zhexu\\Scripts\\MoleBall.cs",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAFQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T09:01:51.221Z"
+              "WhenOpened": "2025-12-01T09:01:51.221Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 3,
               "Title": "WalkerMonster.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerMonster.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\WalkerMonster.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\WalkerMonster.cs",
               "RelativeToolTip": "Assets\\New\\Script\\Monsters\\WalkerMonster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAYwHwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:55:02.159Z"
+              "WhenOpened": "2025-12-01T08:55:02.159Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "TankMonster.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\TankMonster.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\TankMonster.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\TankMonster.cs",
               "RelativeToolTip": "Assets\\New\\Script\\Monsters\\TankMonster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJkAAAAAAAAAAAAcwMcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:54:44.822Z"
+              "WhenOpened": "2025-12-01T08:54:44.822Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
               "Title": "SpitterMonster.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\SpitterMonster.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\SpitterMonster.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\SpitterMonster.cs",
               "RelativeToolTip": "Assets\\New\\Script\\Monsters\\SpitterMonster.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAcwNIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:54:28.069Z"
+              "WhenOpened": "2025-12-01T08:54:28.069Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "LevelWaveManager.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\LevelWaveManager.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\LevelWaveManager.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\LevelWaveManager.cs",
               "RelativeToolTip": "Assets\\New\\Script\\LevelWaveManager.cs",
-              "ViewState": "AgIAAMoAAAAAAAAAAAAAwNUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAAwJ4AAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:51:06.32Z"
+              "WhenOpened": "2025-12-01T08:51:06.32Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "TutorialDummy.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\TutorialDummy.cs",
               "RelativeDocumentMoniker": "Assets\\Zhexu\\Scripts\\TutorialDummy.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\TutorialDummy.cs",
               "RelativeToolTip": "Assets\\Zhexu\\Scripts\\TutorialDummy.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAjwGEAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAwDcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:32:32.52Z"
+              "WhenOpened": "2025-12-01T08:32:32.52Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 17,
               "Title": "Monster.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Monsters\\Monster.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Monsters\\Monster.cs",
@@ -232,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 14,
               "Title": "Wave.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Wave.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Wave.cs",
@@ -243,31 +299,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 9,
               "Title": "WorldVariable.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\WorldVariable.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\WorldVariable.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\WorldVariable.cs",
               "RelativeToolTip": "Assets\\New\\Script\\WorldVariable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:05:29.336Z"
+              "WhenOpened": "2025-12-01T08:05:29.336Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 1,
               "Title": "Mole.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Mole.cs",
               "RelativeDocumentMoniker": "Assets\\New\\Script\\Mole.cs",
               "ToolTip": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\New\\Script\\Mole.cs",
               "RelativeToolTip": "Assets\\New\\Script\\Mole.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAYwLkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T08:04:51.122Z"
+              "WhenOpened": "2025-12-01T08:04:51.122Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "MoleSpawner.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\MoleSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\Zhexu\\Scripts\\MoleSpawner.cs",
@@ -279,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 16,
               "Title": "HealthBarPro.cs",
               "DocumentMoniker": "C:\\Users\\mpjiw\\Desktop\\yeet-a-mole-final\\Assets\\Zhexu\\Scripts\\HealthBarPro.cs",
               "RelativeDocumentMoniker": "Assets\\Zhexu\\Scripts\\HealthBarPro.cs",

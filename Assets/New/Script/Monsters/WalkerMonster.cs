@@ -1,10 +1,9 @@
-// WalkerMonster.cs
 using UnityEngine;
 
 public class WalkerMonster : Monster
 {
-    [Header("Walker Specific Sounds")]
-    public AudioClip[] footstepSounds;  // Faster footsteps
+    private WalkerAnimationController animationController;
+    private bool isAttacking = false;
 
     protected override void Start()
     {
@@ -13,24 +12,114 @@ public class WalkerMonster : Monster
         hp = 1;
         damageOnBreach = 1;
 
-        // Walker specific settings
-        playMovementSounds = true;
-        movementSoundInterval = 0.3f; // Fast footsteps
-        minIdleSoundInterval = 2f;    // More frequent growls
-        maxIdleSoundInterval = 5f;
+        // Add animation controller if not present
+        animationController = GetComponent<WalkerAnimationController>();
+        if (animationController == null)
+        {
+            animationController = gameObject.AddComponent<WalkerAnimationController>();
+        }
 
         base.Start();
     }
 
-    protected override void StartRepeatedSounds()
+    void Update()
     {
-        // Use walker-specific footstep sounds if provided
-        if (footstepSounds != null && footstepSounds.Length > 0)
+        if (hp <= 0 || isAttacking) return;
+
+        HandleMovement();
+        CheckForRingBreach();
+    }
+
+    protected override void HandleMovement()
+    {
+        if (playerCenter == null) return;
+
+        Vector3 direction = (playerCenter.position - transform.position).normalized;
+        direction.y = 0;
+
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+        FacePlayer();
+    }
+
+    protected override void CheckForRingBreach()
+    {
+        if (hasBreached || playerCenter == null) return;
+
+        Vector2 monsterPos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 centerPos = new Vector2(playerCenter.position.x, playerCenter.position.z);
+        float distanceFromCenter = Vector2.Distance(monsterPos, centerPos);
+
+        if (distanceFromCenter <= defenseRingRadius)
         {
-            movementSounds = footstepSounds;
+            BreachRing();
+        }
+    }
+
+    protected override void BreachRing()
+    {
+        hasBreached = true;
+        isAttacking = true;
+
+        Debug.Log($"{monsterType} breached the ring! Playing attack animation...");
+
+        // Stop movement
+        moveSpeed = 0;
+
+        // Play attack animation
+        if (animationController != null)
+        {
+            animationController.PlayAttackAnimation();
         }
 
-        base.StartRepeatedSounds();
+        // Apply damage immediately (or you can time it with animation)
+        if (worldVariable != null)
+        {
+            worldVariable.playerHealth -= damageOnBreach;
+            Debug.Log($"Player health (via WorldVariable): {worldVariable.playerHealth}");
+        }
+
+        // Destroy after attack animation
+        Invoke("DestroyAfterAttack", 1.5f);
+    }
+
+    void DestroyAfterAttack()
+    {
+        Destroy(gameObject);
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        hp -= damage;
+        Debug.Log($"Walker Hit! HP Left: {hp}");
+        StartCoroutine(FlashRed());
+
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    protected override void Die()
+    {
+        // Stop movement
+        moveSpeed = 0;
+
+        // Play death animation
+        if (animationController != null)
+        {
+            animationController.PlayDeathAnimation();
+        }
+        else
+        {
+            // Fallback if no animation controller
+            base.Die();
+        }
+    }
+
+    // This is called by the animation controller after death animation
+    public void BaseDie()
+    {
+        base.Die();
     }
 }
-

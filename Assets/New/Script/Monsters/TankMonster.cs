@@ -1,6 +1,3 @@
-
-
-// TankMonster.cs
 using UnityEngine;
 using System.Collections;
 
@@ -11,6 +8,10 @@ public class TankMonster : Monster
 
     [Header("Tank Specific Sounds")]
     public AudioClip[] heavyFootstepSounds;
+
+    [Header("Tank Animation")]
+    private MonsterAnimationController animationController; // Reusing same controller as Walker
+    private bool isAttacking = false;
 
     protected override void Start()
     {
@@ -27,6 +28,16 @@ public class TankMonster : Monster
         soundVolume = 1.0f; // Louder
 
         base.Start();
+
+        // Initialize animation controller
+        animationController = GetComponent<MonsterAnimationController>();
+        if (animationController == null)
+        {
+            animationController = gameObject.AddComponent<MonsterAnimationController>();
+        }
+
+        // Make tank bigger
+        transform.localScale = Vector3.one * 1.5f; // 50% bigger
     }
 
     protected override void StartRepeatedSounds()
@@ -40,6 +51,84 @@ public class TankMonster : Monster
         base.StartRepeatedSounds();
     }
 
+    void Update()
+    {
+        if (hp <= 0 || isAttacking) return;
+
+        HandleMovement();
+        CheckForRingBreach();
+    }
+
+    protected override void HandleMovement()
+    {
+        if (playerCenter == null) return;
+
+        Vector3 direction = (playerCenter.position - transform.position).normalized;
+        direction.y = 0;
+
+        transform.position += direction * moveSpeed * Time.deltaTime;
+
+        FacePlayer();
+    }
+
+    protected override void CheckForRingBreach()
+    {
+        if (hasBreached || playerCenter == null) return;
+
+        Vector2 monsterPos = new Vector2(transform.position.x, transform.position.z);
+        Vector2 centerPos = new Vector2(playerCenter.position.x, playerCenter.position.z);
+        float distanceFromCenter = Vector2.Distance(monsterPos, centerPos);
+
+        if (distanceFromCenter <= defenseRingRadius)
+        {
+            BreachRing();
+        }
+    }
+
+    protected override void BreachRing()
+    {
+        hasBreached = true;
+        isAttacking = true;
+
+        Debug.Log($"{monsterType} breached the ring! Playing attack animation...");
+
+        // Stop movement
+        moveSpeed = 0;
+
+        // Play attack animation
+        if (animationController != null)
+        {
+            animationController.PlayAttackAnimation();
+        }
+        else
+        {
+            // Fallback: immediate damage and destroy
+            ApplyBreachDamage();
+            Destroy(gameObject);
+        }
+
+        // Damage player immediately (or you can time it with animation)
+        ApplyBreachDamage();
+
+        // Destroy after attack animation
+        Invoke("DestroyAfterAttack", 1.5f);
+    }
+
+    void DestroyAfterAttack()
+    {
+        Destroy(gameObject);
+    }
+
+    void ApplyBreachDamage()
+    {
+        if (worldVariable != null)
+        {
+            worldVariable.playerHealth -= damageOnBreach;
+            Debug.Log($"Player health (via WorldVariable): {worldVariable.playerHealth}");
+        }
+    }
+
+    // Override OnCollisionEnter to handle MoleBall collisions
     void OnCollisionEnter(Collision collision)
     {
         MoleBall ball = collision.gameObject.GetComponent<MoleBall>();
@@ -50,6 +139,7 @@ public class TankMonster : Monster
         }
     }
 
+    // Handle ball hits (separate from TutorialDummy's OnCollisionEnter)
     public void HandleBallHit(MoleBall ball)
     {
         if (onlyDamagedByExplosives && !ball.isExplosive)
@@ -78,5 +168,33 @@ public class TankMonster : Monster
             if (rend) rend.material.color = original;
         }
     }
-}
 
+    public override void TakeDamage(int damage)
+    {
+        hp -= damage;
+        Debug.Log($"Tank Hit! HP Left: {hp}");
+        StartCoroutine(FlashRed());
+
+        if (hp <= 0)
+        {
+            Die();
+        }
+    }
+
+    protected override void Die()
+    {
+        // Stop movement
+        moveSpeed = 0;
+
+        // Play death animation
+        if (animationController != null)
+        {
+            animationController.PlayDeathAnimation();
+        }
+        else
+        {
+            // Fallback if no animation controller
+            base.Die();
+        }
+    }
+}

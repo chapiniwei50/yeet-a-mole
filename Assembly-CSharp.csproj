@@ -75,6 +75,7 @@
     <Compile Include="Assets\New\Script\Monsters\SpitterMonster.cs" />
     <Compile Include="Assets\New\Script\GameOverScene.cs" />
     <Compile Include="Assets\Ilumisoft\Health System\Demo\Scripts\DemoDummy.cs" />
+    <Compile Include="Assets\New\Script\MoleAnimationController.cs" />
     <Compile Include="Assets\New\Script\ToolSwap.cs" />
     <Compile Include="Assets\New\Script\Monsters\Monster.cs" />
     <Compile Include="Assets\Ilumisoft\Health System\Scripts\Base\HitboxComponent.cs" />
@@ -91,8 +92,11 @@
     <Compile Include="Assets\New\Script\SceneController.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\VideoTimeScrubControl.cs" />
+    <Compile Include="Assets\New\Script\Monsters\SpitterAnimationController.cs" />
     <Compile Include="Assets\Zhexu\Scripts\MoleBall.cs" />
     <Compile Include="Assets\Zhexu\Scripts\MoleSpawner.cs" />
+    <Compile Include="Assets\New\Script\Monsters\MonsterAnimationController.cs" />
+    <Compile Include="Assets\New\Script\Monsters\WalkerAnimationController.cs" />
     <Compile Include="Assets\New\Script\Room2.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\Callout.cs" />
     <Compile Include="Assets\VRTemplateAssets\Scripts\CalloutGazeController.cs" />
@@ -1387,12 +1391,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Cinemachine.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.XR.ARFoundation">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Cinemachine">
       <HintPath>Library\ScriptAssemblies\Unity.Cinemachine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.ARFoundation">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.ARFoundation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.XR.OpenXR.Features.RuntimeDebugger.Editor">
@@ -1523,12 +1527,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.Settings.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.XR.ARSubsystems">
-      <HintPath>Library\ScriptAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.XR.OpenXR.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.XR.OpenXR.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.XR.ARSubsystems">
+      <HintPath>Library\ScriptAssemblies\Unity.XR.ARSubsystems.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEditor.UI">
