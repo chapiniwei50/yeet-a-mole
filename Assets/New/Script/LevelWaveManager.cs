@@ -163,7 +163,7 @@ public class LevelWaveManager : MonoBehaviour
         float x = Mathf.Cos(randomAngle * Mathf.Deg2Rad) * spawnDistance;
         float z = Mathf.Sin(randomAngle * Mathf.Deg2Rad) * spawnDistance;
 
-        Vector3 spawnPosition = pipe.position + new Vector3(x, 1.5f, z);
+        Vector3 spawnPosition = pipe.position + new Vector3(x, 0f, z);
 
         // Create the monster
         GameObject monster = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);

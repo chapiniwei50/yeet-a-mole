@@ -9463,9 +9463,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelWaveManager
   waves:
   - waveNumber: 1
-    basicCount: 3
+    basicCount: 1
     spitterCount: 0
-    tankCount: 0
+    tankCount: 1
     spawnInterval: 5
   - waveNumber: 2
     basicCount: 2
@@ -9477,9 +9477,9 @@ MonoBehaviour:
     spitterCount: 2
     tankCount: 2
     spawnInterval: 8
-  walkerPrefab: {fileID: 8158976249141679209, guid: 37b4bb17bf2f1e64bb7adad855f3809e, type: 3}
-  spitterPrefab: {fileID: 8158976249141679209, guid: b176d97097b006b4e8508b793bf11533, type: 3}
-  tankPrefab: {fileID: 8158976249141679209, guid: 6843effa24f1c5a42bf1678fccc1c269, type: 3}
+  walkerPrefab: {fileID: 1101597048596877429, guid: 28a6d2021ef1ad44e9ecb564f4bd4490, type: 3}
+  spitterPrefab: {fileID: 1101597048596877429, guid: cb86d8bdacb385d418574a9112e7480a, type: 3}
+  tankPrefab: {fileID: 1101597048596877429, guid: 9dd4d918d7358dc40abe89d6b782a156, type: 3}
   pipe: {fileID: 524660108}
   spawnDistance: 20
   spawnHeight: 0.5
@@ -10348,6 +10348,10 @@ PrefabInstance:
     - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_Name
       value: XR Origin Hands (XR Rig)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8806329115733545877, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.x

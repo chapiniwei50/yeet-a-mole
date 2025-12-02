@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1101597048596877429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5644402953076135110}
+  - component: {fileID: 6415953555123361647}
+  - component: {fileID: 982305031254367918}
+  m_Layer: 0
+  m_Name: walkerMonster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5644402953076135110
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101597048596877429}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.78, y: 3.11, z: 11.693}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1235375741816443525}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6415953555123361647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101597048596877429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c27da873fc3f634ca7e0f03dd648dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WalkerMonster
+  hp: 1
+  isShooter: 0
+  projectilePrefab: {fileID: 0}
+  firePoint: {fileID: 0}
+  shootInterval: 3
+  shootSound: {fileID: 0}
+  moveSpeed: 3
+  damageOnBreach: 1
+  defenseRingRadius: 5
+  monsterType: 0
+  spawnSound: {fileID: 8300000, guid: 02a99ca8aff8455449b341b6fde1dd10, type: 3}
+  idleSounds:
+  - {fileID: 8300000, guid: 02a99ca8aff8455449b341b6fde1dd10, type: 3}
+  movementSounds:
+  - {fileID: 8300000, guid: 3548359d34f237b43ace3596e7b98914, type: 3}
+  - {fileID: 8300000, guid: 4bfe75bcd46927848a96b1636c1e242b, type: 3}
+  - {fileID: 8300000, guid: 2853d77858c9e904eb7052aaa6118aa6, type: 3}
+  - {fileID: 8300000, guid: 15e86b3e40bef194b93d01801dd9f39d, type: 3}
+  minIdleSoundInterval: 0.2
+  maxIdleSoundInterval: 1
+  movementSoundInterval: 0.3
+  playMovementSounds: 1
+  soundVolume: 50
+  spatialBlend: 0.1
+  footstepSounds: []
+--- !u!136 &982305031254367918
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101597048596877429}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 1.2, y: 0.8, z: 0.5}
+--- !u!1001 &8475517459961594115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5644402953076135110}
+    m_Modifications:
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.329
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.29260015
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065992167300729148, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+      propertyPath: m_Name
+      value: Burrow@Walk Forward In Place
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+--- !u!4 &1235375741816443525 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7258669589628408710, guid: 610310c0c9c2a0b4e87b2fd324e386eb, type: 3}
+  m_PrefabInstance: {fileID: 8475517459961594115}
+  m_PrefabAsset: {fileID: 0}

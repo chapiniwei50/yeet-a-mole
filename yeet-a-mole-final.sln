@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.ProBuilder.Examples.E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Hands.Samples.VisualizerSample", "Unity.XR.Hands.Samples.VisualizerSample.csproj", "{CEE920F3-C356-E197-98D4-073CA58AC2BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator", "Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.csproj", "{21B0A82F-983F-BB3B-667A-92F520BCA307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor", "Unity.XR.Interaction.Toolkit.Samples.InteractionSimulator.Editor.csproj", "{567BFC5F-0924-7F2E-FD2B-5A715E0691CC}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor", "Unity.XR.Interaction.Toolkit.Samples.Hands.Editor.csproj", "{A7AD44B3-CBBE-F382-DDDF-12164C5B7003}"
 EndProject
 Global
@@ -51,6 +55,14 @@ Global
 		{CEE920F3-C356-E197-98D4-073CA58AC2BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEE920F3-C356-E197-98D4-073CA58AC2BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEE920F3-C356-E197-98D4-073CA58AC2BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21B0A82F-983F-BB3B-667A-92F520BCA307}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21B0A82F-983F-BB3B-667A-92F520BCA307}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21B0A82F-983F-BB3B-667A-92F520BCA307}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21B0A82F-983F-BB3B-667A-92F520BCA307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{567BFC5F-0924-7F2E-FD2B-5A715E0691CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{567BFC5F-0924-7F2E-FD2B-5A715E0691CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{567BFC5F-0924-7F2E-FD2B-5A715E0691CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{567BFC5F-0924-7F2E-FD2B-5A715E0691CC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A7AD44B3-CBBE-F382-DDDF-12164C5B7003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A7AD44B3-CBBE-F382-DDDF-12164C5B7003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7AD44B3-CBBE-F382-DDDF-12164C5B7003}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f62c7b7418ee024aa16285921e63d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ProcessPermissionsOnAwake: 1
+  m_ProcessPermissionsOnAwake: 0
   m_PermissionGroups:
   - platformType: 1
     permissions:
