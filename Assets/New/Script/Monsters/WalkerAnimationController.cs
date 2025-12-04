@@ -4,11 +4,13 @@ using System.Collections;
 public class WalkerAnimationController : MonoBehaviour
 {
     [Header("Animation FBX Files")]
+    public GameObject spawnAnimationFBX;   // NEW: spawn (rise from ground)
     public GameObject walkAnimationFBX;
     public GameObject attackAnimationFBX;
     public GameObject dieAnimationFBX;
 
     [Header("Animation Settings")]
+    public float spawnAnimationLength = 1.0f;   // NEW: how long the spawn clip is
     public float attackAnimationLength = 1.5f;
     public float deathAnimationLength = 2.0f;
 
@@ -16,42 +18,91 @@ public class WalkerAnimationController : MonoBehaviour
     private Animation currentAnimation;
     private string currentState = "idle";
     private Monster monster;
+    private bool isSpawning = false;
 
     void Start()
     {
         monster = GetComponent<Monster>();
+
+        // If we have a spawn animation, play that first
+        if (spawnAnimationFBX != null && spawnAnimationLength > 0f)
+        {
+            PlaySpawnAnimation();
+        }
+        else
+        {
+            // Fallback: go straight to walk if no spawn animation assigned
+            PlayWalkAnimation();
+        }
+    }
+
+    // ---------------- SPAWN ----------------
+
+    public void PlaySpawnAnimation()
+    {
+        if (isSpawning) return;
+
+        isSpawning = true;
+        SwitchAnimation("spawn", spawnAnimationFBX, false);
+
+        // After spawn animation finishes, go into walk loop
+        StartCoroutine(SpawnThenWalk());
+    }
+
+    private IEnumerator SpawnThenWalk()
+    {
+        yield return new WaitForSeconds(spawnAnimationLength);
+
+        isSpawning = false;
         PlayWalkAnimation();
     }
 
+    // ---------------- WALK ----------------
+
     public void PlayWalkAnimation()
     {
-        if (currentState == "walk") return;
+        if (currentState == "walk" || isSpawning) return;
 
         SwitchAnimation("walk", walkAnimationFBX, true);
     }
 
+    // ---------------- ATTACK ----------------
+
     public void PlayAttackAnimation()
     {
-        if (currentState == "attack") return;
+        if (currentState == "attack" || isSpawning) return;
 
         SwitchAnimation("attack", attackAnimationFBX, false);
 
         // After attack animation, the monster will be destroyed
-        Invoke("DestroyAfterAttack", attackAnimationLength);
+        Invoke(nameof(DestroyAfterAttack), attackAnimationLength);
     }
+
+    // ---------------- DEATH ----------------
 
     public void PlayDeathAnimation()
     {
         if (currentState == "die") return;
 
+        // If we're in the middle of spawning, stop that state
+        isSpawning = false;
+
         SwitchAnimation("die", dieAnimationFBX, false);
 
         // Destroy after death animation
-        Invoke("DestroyAfterDeath", deathAnimationLength);
+        Invoke(nameof(DestroyAfterDeath), deathAnimationLength);
     }
+
+    // ---------------- CORE SWITCH ----------------
 
     void SwitchAnimation(string newState, GameObject animationFBX, bool loop)
     {
+        if (animationFBX == null)
+        {
+            Debug.LogWarning($"WalkerAnimationController: No FBX assigned for state '{newState}'");
+            return;
+        }
+
         // Clean up current animation
         if (currentModel != null)
         {
@@ -72,21 +123,18 @@ public class WalkerAnimationController : MonoBehaviour
 
         if (currentAnimation != null)
         {
-            // Configure animation
             currentAnimation.playAutomatically = true;
             currentAnimation.cullingType = AnimationCullingType.AlwaysAnimate;
 
-            // Set loop mode
             foreach (AnimationState state in currentAnimation)
             {
                 state.wrapMode = loop ? WrapMode.Loop : WrapMode.Once;
             }
 
-            // Play animation
             currentAnimation.Play();
             currentState = newState;
 
-            Debug.Log($"Playing {newState} animation");
+            Debug.Log($"Walker playing {newState} animation");
         }
         else
         {
@@ -102,10 +150,11 @@ public class WalkerAnimationController : MonoBehaviour
     void DestroyAfterDeath()
     {
         // Disable the monster but don't destroy immediately
-        // This allows for cleanup or effects
-        monster.gameObject.SetActive(false);
+        if (monster != null)
+        {
+            monster.gameObject.SetActive(false);
+        }
 
-        // Or destroy after a delay
         Destroy(gameObject, 0.5f);
     }
 

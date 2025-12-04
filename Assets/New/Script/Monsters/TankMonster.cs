@@ -4,7 +4,7 @@ using System.Collections;
 public class TankMonster : Monster
 {
     [Header("Tank Settings")]
-    public bool onlyDamagedByExplosives = true;
+    public bool onlyDamagedByExplosives = false;
 
     [Header("Tank Specific Sounds")]
     public AudioClip[] heavyFootstepSounds;
@@ -16,16 +16,9 @@ public class TankMonster : Monster
     protected override void Start()
     {
         monsterType = MonsterType.Tank;
-        moveSpeed = 1.0f; // Slower movement
-        hp = 3;
-        damageOnBreach = 2;
+      
 
-        // Tank specific settings
-        playMovementSounds = true;
-        movementSoundInterval = 0.7f; // Slow, heavy footsteps
-        minIdleSoundInterval = 4f;    // Deep, less frequent growls
-        maxIdleSoundInterval = 10f;
-        soundVolume = 1.0f; // Louder
+  
 
         base.Start();
 
@@ -36,8 +29,7 @@ public class TankMonster : Monster
             animationController = gameObject.AddComponent<MonsterAnimationController>();
         }
 
-        // Make tank bigger
-        transform.localScale = Vector3.one * 1.5f; // 50% bigger
+       
     }
 
     protected override void StartRepeatedSounds()
@@ -169,17 +161,7 @@ public class TankMonster : Monster
         }
     }
 
-    public override void TakeDamage(int damage)
-    {
-        hp -= damage;
-        Debug.Log($"Tank Hit! HP Left: {hp}");
-        StartCoroutine(FlashRed());
 
-        if (hp <= 0)
-        {
-            Die();
-        }
-    }
 
     protected override void Die()
     {

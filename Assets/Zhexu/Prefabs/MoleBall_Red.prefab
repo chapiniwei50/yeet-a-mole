@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8950435186693761382}
   - component: {fileID: 6863410756120252136}
   - component: {fileID: 5545987848718179505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: MoleBall_Red
   m_TagString: Ball
   m_Icon: {fileID: 0}

@@ -13,8 +13,9 @@ public class ToolHitDetector : MonoBehaviour
         ForwardOnly
     }
 
-    [Header("Target")]
-    public string targetTag;
+    [Header("Targets")]
+    //  Can hit multiple tags (e.g. "Ball" and "enemy_bullet")
+    public string[] targetTags;
 
     [Header("Haptic target")]
     public XRInputHapticImpulseProvider rightControllerHaptic;
@@ -86,7 +87,7 @@ public class ToolHitDetector : MonoBehaviour
                 return velocity.y >= minSwingSpeed;
 
             case SwingType.ForwardOnly:
-                // Negative X = moving forward
+                // Negative X = moving forward (your current convention)
                 return velocity.x <= -minSwingSpeed;
 
             case SwingType.Any:
@@ -95,9 +96,25 @@ public class ToolHitDetector : MonoBehaviour
         }
     }
 
+    private bool MatchesTargetTags(Collider other)
+    {
+        if (targetTags == null || targetTags.Length == 0)
+            return false;
+
+        foreach (string t in targetTags)
+        {
+            if (!string.IsNullOrEmpty(t) && other.CompareTag(t))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag(targetTag))
+        // Must hit a valid target tag (Ball, enemy_bullet, etc.)
+        if (!MatchesTargetTags(other))
             return;
 
         // Must be holding trigger
@@ -105,13 +122,16 @@ public class ToolHitDetector : MonoBehaviour
             return;
 
         // Must be swinging in the correct direction
-        if (!IsSwingDirectionValid() && swingType!= SwingType.ForwardOnly)
+        if (!IsSwingDirectionValid() && swingType != SwingType.ForwardOnly)
             return;
 
         // Haptics
         if (rightControllerHaptic != null)
         {
-            rightControllerHaptic.GetChannelGroup()?.GetChannel()?.SendHapticImpulse(0.7f, 0.15f, 0.0f);
+            rightControllerHaptic
+                .GetChannelGroup()?
+                .GetChannel()?
+                .SendHapticImpulse(0.7f, 0.15f, 0.0f);
         }
 
         // Sound
@@ -120,6 +140,9 @@ public class ToolHitDetector : MonoBehaviour
             audioSource.PlayOneShot(hitClip);
         }
 
+        // ------------------------------------------------------------------------------------
+        // NON-Forward swings: these are for hitting moles (explode / drop ball)
+        // ------------------------------------------------------------------------------------
         if (swingType != SwingType.ForwardOnly)
         {
             Mole m = other.GetComponent<Mole>();
@@ -134,21 +157,36 @@ public class ToolHitDetector : MonoBehaviour
                     m.OnHit();
                 }
             }
-        } else {
-            // get ball rigidbody
-            Rigidbody ballRb = other.attachedRigidbody;
-            if (ballRb == null)
+        }
+        // ------------------------------------------------------------------------------------
+        // ForwardOnly: bat physics for MoleBall AND spitter projectiles
+        // ------------------------------------------------------------------------------------
+        else
+        {
+            // Get rigidbody on the hit object
+            Rigidbody rb = other.attachedRigidbody;
+            if (rb == null)
                 return;
 
-            // launch ball in direction of racket swing
+            // Launch in direction of racket swing
             Vector3 dir = velocity.normalized;
             float launchSpeed = velocity.magnitude * 2.0f;
-            ballRb.linearVelocity = dir * launchSpeed;
 
-            // tell launched ball to set its state to "Yeeted"
-            MoleBall b = other.GetComponent<MoleBall>();
-            if (b != null) b.yeeted();
+            rb.linearVelocity = dir * launchSpeed;
+
+            // If it's a MoleBall, set its yeet state (same as before)
+            MoleBall moleBall = other.GetComponent<MoleBall>();
+            if (moleBall != null)
+            {
+                moleBall.yeeted();
+            }
+
+            // If it's a spitter projectile, mark it as reflected and reuse same velocity
+            SimpleProjectile proj = other.GetComponent<SimpleProjectile>();
+            if (proj != null)
+            {
+                proj.SetReflected(dir * launchSpeed);
+            }
         }
-        
     }
 }

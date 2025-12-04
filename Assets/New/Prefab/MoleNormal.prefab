@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 1982415482835626130}
   - component: {fileID: 877569323036255727}
   - component: {fileID: 6446615690932153108}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoleNormal
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,11 +50,9 @@ MonoBehaviour:
   isExplosive: 0
   moleBall: {fileID: 5486510734528527799, guid: 7bf7205a008d3e44f8d2b6f0edab5dab, type: 3}
   worldVariable: {fileID: 0}
-  moleAppearAnimationFBX: {fileID: 919132149155446097, guid: 696eaaab57eb70e41ae9d447cdd5bdde, type: 3}
-  moleIdleAnimationFBX: {fileID: 919132149155446097, guid: 696eaaab57eb70e41ae9d447cdd5bdde, type: 3}
-  glowEffectPrefab: {fileID: 0}
-  normalGlowColor: {r: 1, g: 0, b: 0, a: 1}
-  warningGlowColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  blinkColor: {r: 1, g: 0, b: 0, a: 1}
+  baseEmissionIntensity: 0.5
+  warningEmissionIntensity: 3
   explosionTime: 10
   Explosion: {fileID: 0}
   HitSound: {fileID: 0}
@@ -191,6 +189,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998fb422585c45749aad3ca0a91570dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoleAnimationController
-  appearAnimationFBX: {fileID: 919132149155446097, guid: 696eaaab57eb70e41ae9d447cdd5bdde, type: 3}
+  appearAnimationFBX: {fileID: 919132149155446097, guid: 806bdc664d42c6d42918b741e4710755, type: 3}
   idleAnimationFBX: {fileID: 919132149155446097, guid: 696eaaab57eb70e41ae9d447cdd5bdde, type: 3}
   appearAnimationLength: 1

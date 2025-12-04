@@ -8,9 +8,8 @@ public class WalkerMonster : Monster
     protected override void Start()
     {
         monsterType = MonsterType.Walker;
-        moveSpeed = 3.0f;
-        hp = 1;
-        damageOnBreach = 1;
+
+ 
 
         // Add animation controller if not present
         animationController = GetComponent<WalkerAnimationController>();
@@ -88,38 +87,33 @@ public class WalkerMonster : Monster
         Destroy(gameObject);
     }
 
-    public override void TakeDamage(int damage)
-    {
-        hp -= damage;
-        Debug.Log($"Walker Hit! HP Left: {hp}");
-        StartCoroutine(FlashRed());
+ 
 
-        if (hp <= 0)
-        {
-            Die();
-        }
-    }
 
     protected override void Die()
     {
         // Stop movement
         moveSpeed = 0;
 
-        // Play death animation
+        // Optional: disable collider so no more physical hits
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+        {
+            col.enabled = false;
+        }
+
+        // Play death animation, and let WalkerAnimationController
+        // handle disabling / destroying the monster after it finishes.
         if (animationController != null)
         {
             animationController.PlayDeathAnimation();
         }
         else
         {
-            // Fallback if no animation controller
+            // Fallback: if no animation controller, just use base behavior
             base.Die();
         }
     }
 
-    // This is called by the animation controller after death animation
-    public void BaseDie()
-    {
-        base.Die();
-    }
+
 }

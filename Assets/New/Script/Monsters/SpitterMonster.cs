@@ -14,23 +14,13 @@ public class SpitterMonster : Monster
     private SpitterAnimationController animationController;
     private bool isInShootingRange = false;
 
+    // NEW: track dead state so we can block shooting / movement cleanly
+    private bool isDead = false;
+
     protected override void Start()
     {
         // Set spitter properties
         monsterType = MonsterType.Spitter;
-        moveSpeed = 1.5f;
-        hp = 1;
-        damageOnBreach = 1;
-
-        // Enable shooting with TutorialDummy system
-        isShooter = true;
-        shootInterval = 2.5f; // Custom interval
-
-        // Spitter specific settings
-        playMovementSounds = true;
-        movementSoundInterval = 0.4f; // Slick, slimy movement
-        minIdleSoundInterval = 1.5f;  // Frequent hissing
-        maxIdleSoundInterval = 4f;
 
         base.Start();
 
@@ -60,26 +50,19 @@ public class SpitterMonster : Monster
 
     protected override void HandleMovement()
     {
-        if (playerCenter == null) return;
+        if (playerCenter == null || isDead || hp <= 0) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, playerCenter.position);
 
         // Check if we're in shooting range
         bool nowInShootingRange = distanceToPlayer <= stoppingDistance;
 
-        // If we just entered or left shooting range, update animation
         if (nowInShootingRange != isInShootingRange)
         {
             isInShootingRange = nowInShootingRange;
-
-            if (!isInShootingRange && animationController != null)
-            {
-                // Left shooting range, resume walking
-                animationController.PlayWalkAnimation();
-            }
+            // (animation choice handled below each frame)
         }
 
-        // Stop at shooting distance
         if (distanceToPlayer > stoppingDistance)
         {
             // Move toward player
@@ -88,7 +71,7 @@ public class SpitterMonster : Monster
             transform.position += direction * moveSpeed * Time.deltaTime;
             isMoving = true;
 
-            // Play walk animation if not already playing
+            // Moving  play WALK (if not shooting)
             if (animationController != null && !animationController.IsShooting())
             {
                 animationController.PlayWalkAnimation();
@@ -96,13 +79,13 @@ public class SpitterMonster : Monster
         }
         else
         {
-            // Close enough to shoot, stop moving
+            // In range, stop moving
             isMoving = false;
 
-            // Play walk animation (idle at shooting position)
+            // Stopped and not shooting  play IDLE
             if (animationController != null && !animationController.IsShooting())
             {
-                animationController.PlayWalkAnimation();
+                animationController.PlayIdleAnimation();
             }
         }
 
@@ -110,9 +93,13 @@ public class SpitterMonster : Monster
         FacePlayer();
     }
 
+
     // Override the shooting method to add animation
     protected override void Shoot()
     {
+        // Hard guard: no shooting if dead or HP gone
+        if (isDead || hp <= 0) return;
+
         // Play shoot animation
         if (animationController != null)
         {
@@ -126,6 +113,9 @@ public class SpitterMonster : Monster
     IEnumerator ShootAfterAnimationDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
+
+        // Check again in case we died while waiting
+        if (isDead || hp <= 0) yield break;
 
         // Play shooting sound if available
         if (shootSound != null && audioSource != null)
@@ -149,13 +139,13 @@ public class SpitterMonster : Monster
         if (audioSource != null && idleSounds != null && idleSounds.Length > 0)
         {
             // Play an extra idle sound immediately after spawn
-            Invoke("PlayDelayedHiss", 0.5f);
+            Invoke(nameof(PlayDelayedHiss), 0.5f);
         }
     }
 
     private void PlayDelayedHiss()
     {
-        if (hp > 0 && idleSounds != null && idleSounds.Length > 0)
+        if (hp > 0 && !isDead && idleSounds != null && idleSounds.Length > 0)
         {
             PlayRandomSound(idleSounds);
         }
@@ -163,20 +153,24 @@ public class SpitterMonster : Monster
 
     public override void TakeDamage(int damage)
     {
-        hp -= damage;
-        Debug.Log($"Spitter Hit! HP Left: {hp}");
-        StartCoroutine(FlashRed());
+        if (isDead || hp <= 0) return;
 
-        if (hp <= 0)
-        {
-            Die();
-        }
+        // Let Monster handle hit flash + hit/death sounds + hp logic
+        Debug.Log($"Spitter took {damage} damage (HP before: {hp})");
+        base.TakeDamage(damage);
     }
 
     protected override void Die()
     {
+        if (isDead) return;
+        isDead = true;
+
+        // Stop all coroutines (including ShootRoutine, ShootAfterAnimationDelay, idle/movement sounds)
+        StopAllCoroutines();
+
         // Stop movement
         moveSpeed = 0;
+        isMoving = false;
 
         // Play death animation
         if (animationController != null)
@@ -192,11 +186,16 @@ public class SpitterMonster : Monster
 
     protected override void BreachRing()
     {
+        if (isDead) return;
+
         hasBreached = true;
         Debug.Log($"{monsterType} breached the ring!");
 
-        // Stop movement
+        // Stop everything
+        isDead = true;
         moveSpeed = 0;
+        isMoving = false;
+        StopAllCoroutines();
 
         // Apply damage immediately
         if (worldVariable != null)
@@ -205,7 +204,7 @@ public class SpitterMonster : Monster
             Debug.Log($"Player health (via WorldVariable): {worldVariable.playerHealth}");
         }
 
-        // Destroy immediately on breach (or play a breach animation if you have one)
+        // Destroy immediately on breach (or you could play a special animation)
         Destroy(gameObject);
     }
 }

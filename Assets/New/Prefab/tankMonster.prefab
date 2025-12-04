@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8619161454071065389}
   m_Layer: 0
   m_Name: tankMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.65176, y: 0.15, z: 1.34749}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8289265539165754389}
@@ -76,7 +76,7 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   shootInterval: 3
   shootSound: {fileID: 0}
-  moveSpeed: 1
+  moveSpeed: 0.3
   damageOnBreach: 1
   defenseRingRadius: 5
   monsterType: 2
@@ -86,13 +86,17 @@ MonoBehaviour:
   movementSounds:
   - {fileID: 8300000, guid: 15e86b3e40bef194b93d01801dd9f39d, type: 3}
   - {fileID: 8300000, guid: f3c170849d055544892d1c5a960deb5d, type: 3}
-  minIdleSoundInterval: 0.5
-  maxIdleSoundInterval: 2
-  movementSoundInterval: 0.5
+  minIdleSoundInterval: 3
+  maxIdleSoundInterval: 6
+  movementSoundInterval: 1
   playMovementSounds: 1
-  soundVolume: 50
-  spatialBlend: 0.1
-  onlyDamagedByExplosives: 1
+  soundVolume: 10
+  spatialBlend: 2
+  hitSound: {fileID: 8300000, guid: 2e64c918652ece64cbb3da31bd7c7c7c, type: 3}
+  hitVolume: 0.9
+  deathSound: {fileID: 8300000, guid: e1e5cf30795f9f34284a4f8947955266, type: 3}
+  deathVolume: 1
+  onlyDamagedByExplosives: 0
   heavyFootstepSounds: []
 --- !u!114 &8619161454071065389
 MonoBehaviour:
@@ -106,9 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2612e289515c7f4b8b86b20bd14e641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterAnimationController
+  spawnAnimationFBX: {fileID: 919132149155446097, guid: 20c43d1d9a878294ca385c79fb101e1a, type: 3}
   walkAnimationFBX: {fileID: 919132149155446097, guid: 00177d70c894fd3408bc2876d34dbbad, type: 3}
   attackAnimationFBX: {fileID: 919132149155446097, guid: 02e75de15ceb6a34c9ce8e71cf1b0a43, type: 3}
   dieAnimationFBX: {fileID: 919132149155446097, guid: 23e4575df79f8a143935a27822bd59d1, type: 3}
+  spawnAnimationLength: 1
   attackAnimationLength: 1.5
   deathAnimationLength: 2
 --- !u!1 &5783627471991469658

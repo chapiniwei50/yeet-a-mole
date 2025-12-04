@@ -11,7 +11,7 @@ public class Monster : TutorialDummy
     [Header("Monster Type")]
     public MonsterType monsterType;
 
-    [Header("Monster Sounds")]
+    [Header("Spawn & Ambient Sounds")]
     public AudioClip spawnSound;
 
     [Header("Repeated Sounds")]
@@ -25,6 +25,12 @@ public class Monster : TutorialDummy
     [Header("Sound Settings")]
     public float soundVolume = 0.7f;
     public float spatialBlend = 1.0f;        // 0 = 2D, 1 = 3D
+
+    [Header("Hit & Death Sounds")]
+    public AudioClip hitSound;
+    public float hitVolume = 0.9f;
+    public AudioClip deathSound;
+    public float deathVolume = 1.0f;
 
     protected bool hasBreached = false;
     protected Transform playerCenter;
@@ -52,9 +58,9 @@ public class Monster : TutorialDummy
             playerCenter = xrOrigin.transform;
         }
 
-        base.Start();
+        base.Start(); // sets up audioSource, rend, etc from TutorialDummy
 
-        // Configure AudioSource
+        // Configure AudioSource for 3D monster sounds
         if (audioSource != null)
         {
             audioSource.spatialBlend = spatialBlend;
@@ -118,8 +124,6 @@ public class Monster : TutorialDummy
         if (clips == null || clips.Length == 0 || audioSource == null || hp <= 0)
             return;
 
-    
-
         // Pick random sound
         AudioClip clip = clips[Random.Range(0, clips.Length)];
         if (clip != null)
@@ -129,7 +133,6 @@ public class Monster : TutorialDummy
             audioSource.PlayOneShot(clip);
             // Reset pitch
             audioSource.pitch = 1.0f;
-            Debug.Log($"Playing sound: {clip.name}");
         }
     }
 
@@ -212,14 +215,131 @@ public class Monster : TutorialDummy
         Destroy(gameObject);
     }
 
+    // Monsters have their own collision damage from MoleBall
+    void OnCollisionEnter(Collision collision)
+    {
+        MoleBall ball = collision.gameObject.GetComponent<MoleBall>();
+
+        if (ball != null && ball.currentState == MoleBall.BallState.Yeeted)
+        {
+            TakeDamage(ball.damage);
+            Destroy(ball.gameObject);
+        }
+    }
+
+    // NEW: common damage behavior for all monsters (hit flash + sound)
+    public override void TakeDamage(int damage)
+    {
+        if (hp <= 0) return;
+
+        hp -= damage;
+        Debug.Log($"{monsterType} Hit! HP Left: {hp}");
+
+        // Play hit sound
+        if (audioSource != null && hitSound != null)
+        {
+            audioSource.PlayOneShot(hitSound, hitVolume);
+        }
+
+        // Flash all renderers red briefly
+        StartCoroutine(FlashAllRenderersRed());
+
+        if (hp <= 0)
+        {
+            hp = 0;
+            Die();
+        }
+    }
+
+    private IEnumerator FlashAllRenderersRed()
+    {
+        // Grab all renderers that exist *right now*
+        Renderer[] renderers = GetComponentsInChildren<Renderer>();
+        if (renderers == null || renderers.Length == 0) yield break;
+
+        // Store original colors per renderer/material
+        var originalColors = new Color[renderers.Length][];
+
+        // First pass: set everything to red
+        for (int r = 0; r < renderers.Length; r++)
+        {
+            var rend = renderers[r];
+
+            // Renderer may already have been destroyed
+            if (rend == null) continue;
+
+            Material[] mats;
+            try
+            {
+                mats = rend.materials;
+            }
+            catch (MissingReferenceException)
+            {
+                // Renderer got destroyed while we were iterating; skip it
+                continue;
+            }
+
+            if (mats == null || mats.Length == 0) continue;
+
+            originalColors[r] = new Color[mats.Length];
+            for (int i = 0; i < mats.Length; i++)
+            {
+                if (mats[i] == null) continue;
+                originalColors[r][i] = mats[i].color;
+                mats[i].color = Color.red;
+            }
+        }
+
+        yield return new WaitForSeconds(0.1f);
+
+        // If the whole monster got destroyed in the meantime, just bail out
+        if (this == null) yield break;
+
+        // Second pass: restore original colors where possible
+        for (int r = 0; r < renderers.Length; r++)
+        {
+            var rend = renderers[r];
+            var colorsForRenderer = originalColors[r];
+
+            if (rend == null || colorsForRenderer == null) continue;
+
+            Material[] mats;
+            try
+            {
+                mats = rend.materials;
+            }
+            catch (MissingReferenceException)
+            {
+                // Renderer was destroyed between flash and restore; ignore
+                continue;
+            }
+
+            if (mats == null || mats.Length == 0) continue;
+
+            int count = Mathf.Min(mats.Length, colorsForRenderer.Length);
+            for (int i = 0; i < count; i++)
+            {
+                if (mats[i] == null) continue;
+                mats[i].color = colorsForRenderer[i];
+            }
+        }
+    }
+
+
     protected override void Die()
     {
+        // Play death sound once
+        if (audioSource != null && deathSound != null)
+        {
+            audioSource.PlayOneShot(deathSound, deathVolume);
+        }
+
         // Stop sound coroutines
         if (idleSoundRoutine != null)
             StopCoroutine(idleSoundRoutine);
         if (movementSoundRoutine != null)
             StopCoroutine(movementSoundRoutine);
 
-        base.Die();
+        base.Die(); // by default, this disables the GameObject
     }
 }

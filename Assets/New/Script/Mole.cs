@@ -1,7 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections;
 
+[RequireComponent(typeof(MoleAnimationController))]
 public class Mole : MonoBehaviour
 {
     public bool isExplosive;
@@ -12,14 +13,10 @@ public class Mole : MonoBehaviour
     [Header("References")]
     public WorldVariable worldVariable;
 
-    [Header("Animation")]
-    public GameObject moleAppearAnimationFBX;
-    public GameObject moleIdleAnimationFBX;
-
-    [Header("Glow Settings - For Blinking")]
-    public GameObject glowEffectPrefab;  // Particle system or glow sphere
-    public Color normalGlowColor = Color.red;
-    public Color warningGlowColor = Color.yellow;
+    [Header("Blink / Emission Settings")]
+    public Color blinkColor = Color.red;
+    public float baseEmissionIntensity = 0.5f;   // dim state
+    public float warningEmissionIntensity = 3f;  // bright state
     public float explosionTime = 10.0f;
 
     [Header("Audio")]
@@ -31,35 +28,16 @@ public class Mole : MonoBehaviour
 
     // Private references
     private MoleAnimationController animationController;
-    private GameObject glowEffect;
-    private Renderer glowRenderer;
     private float timer = 0f;
     private bool isBlinking = false;
 
     void Start()
     {
-        // Get or add animation controller
         animationController = GetComponent<MoleAnimationController>();
-        if (animationController == null)
-        {
-            animationController = gameObject.AddComponent<MoleAnimationController>();
-            animationController.appearAnimationFBX = moleAppearAnimationFBX;
-            animationController.idleAnimationFBX = moleIdleAnimationFBX;
-        }
 
-        // Create glow effect
-        if (glowEffectPrefab != null && isExplosive)
-        {
-            glowEffect = Instantiate(glowEffectPrefab, transform);
-            glowEffect.transform.localPosition = Vector3.zero;
-
-            // Get renderer for color changes
-            glowRenderer = glowEffect.GetComponent<Renderer>();
-            if (glowRenderer != null)
-            {
-                glowRenderer.material.color = normalGlowColor;
-            }
-        }
+        // Wait for the animation controller to spawn the FBX model,
+        // then start blinking if needed
+        StartCoroutine(InitAndMaybeStartBlinking());
 
         if (worldVariable == null)
         {
@@ -67,27 +45,31 @@ public class Mole : MonoBehaviour
         }
     }
 
+    IEnumerator InitAndMaybeStartBlinking()
+    {
+        // Give MoleAnimationController.Start() a frame to run and spawn the first FBX
+        yield return null;
+
+        // Only explosive moles blink
+        if (isExplosive && !isBlinking)
+        {
+            StartBlinking();
+        }
+    }
+
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (isExplosive)
+        if (!isExplosive)
         {
-            // Update blinking speed based on timer
-            if (timer >= explosionTime - 5f && !isBlinking)
+            // Non-explosive moles just despawn after a while
+            if (timer > 30.0f)
             {
-                StartBlinking();
-            }
-
-            if (timer > explosionTime)
-            {
-                Explode();
+                Destroy(gameObject);
             }
         }
-        else
-        {
-            if (timer > 30.0f) Destroy(gameObject);
-        }
+        // Explosive moles: BlinkRoutine controls when they explode
     }
 
     void StartBlinking()
@@ -100,57 +82,78 @@ public class Mole : MonoBehaviour
     {
         float baseSpeed = 2f;
         float maxSpeed = 8f;
+        bool bright = false;
 
-        while (isBlinking && glowRenderer != null)
+        // Runs until Explode() destroys this GameObject
+        while (true)
         {
-            // Calculate current blink speed (faster as explosion approaches)
-            float blinkSpeed;
-            if (timer <= explosionTime - 5f)
+            // Check explosion timing first so we blink right up until death
+            if (isExplosive && timer >= explosionTime)
             {
-                blinkSpeed = baseSpeed;
-            }
-            else
-            {
-                float factor = Mathf.InverseLerp(explosionTime - 5f, explosionTime, timer);
-                blinkSpeed = Mathf.Lerp(baseSpeed, maxSpeed, factor);
+                Explode();
+                yield break; // stop coroutine; object is being destroyed
             }
 
-            // Switch between colors
-            if (glowRenderer != null)
+            // Always ask the animation controller for the CURRENT model,
+            // because it may swap from "appear" FBX to "idle" FBX.
+            Renderer moleRenderer = animationController.GetModelRenderer();
+            if (moleRenderer != null)
             {
-                if (glowRenderer.material.color == normalGlowColor)
+                // Get the current material instance used for rendering
+                Material moleMaterial = moleRenderer.material;
+
+                if (moleMaterial.HasProperty("_EmissionColor"))
                 {
-                    glowRenderer.material.color = warningGlowColor;
+                    moleMaterial.EnableKeyword("_EMISSION");
 
-                    // Make emission glow brighter
-                    if (glowRenderer.material.HasProperty("_EmissionColor"))
+                    // Compute blink speed based on how close we are to explosion
+                    float blinkSpeed;
+                    if (explosionTime <= 0.0001f)
                     {
-                        glowRenderer.material.SetColor("_EmissionColor", warningGlowColor * 3f);
+                        blinkSpeed = maxSpeed;
                     }
+                    else
+                    {
+                        float t = Mathf.Clamp01(timer / explosionTime);
+                        blinkSpeed = Mathf.Lerp(baseSpeed, maxSpeed, t);
+                    }
+
+                    // Toggle emission between dim and bright
+                    if (bright)
+                    {
+                        moleMaterial.SetColor("_EmissionColor", blinkColor * baseEmissionIntensity);
+                    }
+                    else
+                    {
+                        moleMaterial.SetColor("_EmissionColor", blinkColor * warningEmissionIntensity);
+                    }
+
+                    bright = !bright;
+
+                    // Blink timing
+                    yield return new WaitForSeconds(0.5f / blinkSpeed);
                 }
                 else
                 {
-                    glowRenderer.material.color = normalGlowColor;
-                    if (glowRenderer.material.HasProperty("_EmissionColor"))
-                    {
-                        glowRenderer.material.SetColor("_EmissionColor", normalGlowColor);
-                    }
+                    // No emission on this material; just wait a frame and try again
+                    yield return null;
                 }
             }
-
-            yield return new WaitForSeconds(0.5f / blinkSpeed);
+            else
+            {
+                // No current model yet (or between swaps) – wait a frame and try again
+                yield return null;
+            }
         }
     }
 
     public void OnHit()
     {
-        // Play hit sound
         if (HitSound != null)
         {
             AudioSource.PlayClipAtPoint(HitSound, transform.position, 1f);
         }
 
-        // Drop mole ball
         if (moleBall != null)
         {
             Instantiate(moleBall, transform.position + Vector3.up, transform.rotation);
@@ -161,9 +164,7 @@ public class Mole : MonoBehaviour
 
     public void Explode()
     {
-        isBlinking = false;
-
-        // Apply damage
+        // Damage player
         if (worldVariable != null)
         {
             worldVariable.playerHealth -= 1;
@@ -175,7 +176,7 @@ public class Mole : MonoBehaviour
             AudioSource.PlayClipAtPoint(Explosion, transform.position, 1f);
         }
 
-        // Spawn explosion effect
+        // Spawn explosion VFX
         if (explodeEffect != null)
         {
             Instantiate(explodeEffect, transform.position, Quaternion.identity);

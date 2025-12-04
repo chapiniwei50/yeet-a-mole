@@ -42,19 +42,13 @@ public class TutorialDummy : MonoBehaviour
 
         if (ball != null && ball.currentState == MoleBall.BallState.Yeeted)
         {
-            // For monsters, let them handle their own damage logic
-            Monster monster = this as Monster;
-            if (monster != null)
-            {
-                // Monsters will handle damage in their own scripts
-                return;
-            }
-
-            // For regular dummies, use default damage
+            // Both dummies and monsters take damage here.
+            // Monsters can still customize behavior by overriding TakeDamage.
             TakeDamage(ball.damage);
             Destroy(ball.gameObject);
         }
     }
+
 
     public virtual void TakeDamage(int damage)
     {

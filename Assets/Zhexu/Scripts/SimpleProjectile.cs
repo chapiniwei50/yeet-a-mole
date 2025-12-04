@@ -1,57 +1,116 @@
-using UnityEngine;
+﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody), typeof(Collider))]
 public class SimpleProjectile : MonoBehaviour
 {
     public float speed = 5f;
     public float lifetime = 5f;
-    public int damage = 1;
 
-    private WorldVariable worldVariable; // Reference to global variable
+    [Header("Damage")]
+    public int damageToPlayer = 1;
+    public int damageToMonster = 1;
 
-    void Start()
+    private WorldVariable worldVariable;
+    private Rigidbody rb;
+
+    private enum ProjectileState
     {
-        // 1. Auto-destroy
-        Destroy(gameObject, lifetime);
+        FromEnemy,
+        Reflected
+    }
 
-        // 2. Find global variable (for dealing damage)
-        worldVariable = FindAnyObjectByType<WorldVariable>();
+    private ProjectileState state = ProjectileState.FromEnemy;
 
-        // 3. Find player and aim (assume the player's head is Main Camera)
-        // Remember to set the Main Camera under XR Origin to Tag "MainCamera" (Unity's default)
-        if (Camera.main != null)
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
+        rb.isKinematic = false;
+
+        // Make sure collider is trigger so ToolHitDetector's OnTriggerEnter works
+        Collider col = GetComponent<Collider>();
+        if (col != null)
         {
-            // Make the projectile face the camera (player's head)
-            transform.LookAt(Camera.main.transform);
+            col.isTrigger = true;
         }
     }
 
-    void Update()
+    void Start()
     {
-        // Since LookAt was already done in Start, just move forward
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        // Auto destroy after lifetime
+        Destroy(gameObject, lifetime);
+
+        // Global vars
+        worldVariable = FindAnyObjectByType<WorldVariable>();
+
+        // Aim at player at spawn
+        if (Camera.main != null)
+        {
+            Vector3 dir = (Camera.main.transform.position - transform.position).normalized;
+            rb.linearVelocity = dir * speed;
+        }
+        else
+        {
+            // Fallback: just go forward
+            rb.linearVelocity = transform.forward * speed;
+        }
+    }
+
+    // Called by ToolHitDetector when racket hits this projectile
+    public void SetReflected(Vector3 newVelocity)
+    {
+        state = ProjectileState.Reflected;
+        rb.linearVelocity = newVelocity;
+
+        // Optional: change color when reflected so it's visually obvious
+        //var rend = GetComponentInChildren<Renderer>();
+        //if (rend != null) rend.material.color = Color.cyan;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if it hit the player
-        // For safety, detect "Player" Tag or "MainCamera" Tag
-        if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
+        // REFLECTED PROJECTILE: can hit monsters, not player
+        if (state == ProjectileState.Reflected)
         {
-            Debug.Log("Player hit!");
-            
-            // Damage logic
-            if (worldVariable != null)
+            Monster monster = other.GetComponentInParent<Monster>();
+            if (monster != null)
             {
-                worldVariable.playerHealth -= damage;
-                Debug.Log($"Current health: {worldVariable.playerHealth}");
+                Debug.Log("Reflected projectile hit monster!");
+                monster.TakeDamage(damageToMonster);
+                Destroy(gameObject);
+                return;
             }
 
-            Destroy(gameObject);
+            // Hit ground/wall after reflection → just destroy
+            if (other.CompareTag("Ground") || other.CompareTag("Untagged"))
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
-        // Destroy when hitting wall/floor
-        else if (other.CompareTag("Ground") || other.CompareTag("Untagged")) 
+        // ORIGINAL ENEMY PROJECTILE: can hit player
+        else // state == FromEnemy
         {
-            Destroy(gameObject);
+            if (other.CompareTag("Player") || other.CompareTag("MainCamera"))
+            {
+                Debug.Log("Player hit!");
+
+                if (worldVariable != null)
+                {
+                    worldVariable.playerHealth -= damageToPlayer;
+                    Debug.Log($"Current health: {worldVariable.playerHealth}");
+                }
+
+                Destroy(gameObject);
+                return;
+            }
+
+            // If it hits ground/wall before reflection, just destroy
+            if (other.CompareTag("Ground") || other.CompareTag("Untagged"))
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
     }
 }
