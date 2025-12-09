@@ -94,6 +94,12 @@ Wave-based encounter → Boss battle
 * **Final Boss** → multi-phase patterns
 
 ---
+# **🏆 Win / Lose Conditions**
+
+* **Win:** Clear all waves + defeat boss
+* **Lose:** HP reaches 0
+
+---
 
 # **💻 Tech Stack**
 
@@ -114,11 +120,6 @@ Wave-based encounter → Boss battle
 
 ---
 
-# **🏆 Win / Lose Conditions**
 
-* **Win:** Clear all waves + defeat boss
-* **Lose:** HP reaches 0
-
----
 
 
