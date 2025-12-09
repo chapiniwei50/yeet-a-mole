@@ -7,8 +7,6 @@
 
 ---
 
-If you want, I can also generate a stylized ASCII or banner version for more flair.
-
 
 ## **📌 Overview**
 
