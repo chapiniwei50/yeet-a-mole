@@ -27,20 +27,6 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 
 ---
 
-## **🎬 Short Feature Clips**
-
-
-
-
-
-
-
-### **Boss Fight Clip**
-
-`[Boss Fight Video Placeholder]`
-
----
-
 # **🎮 Key Features**
 
 * **Three-Tool Combat System** (Bat, Shovel, Racket)
