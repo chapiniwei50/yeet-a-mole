@@ -12,7 +12,7 @@
 
 ## **📌 Overview**
 
-**Yeet-a-Mole** is a fast-paced VR wave-survival action game built in Unity. Players use three tools—**Bat**, **Shovel**, and **Racket**—to neutralize mole types, convert them into mole-balls, and “Yeet” mole-balls at enemies. The core loop:
+Yeet-a-Mole is a fast-paced VR wave-survival action game built in Unity. Players use three tools—**Bat**, **Shovel**, and **Racket**—to neutralize mole types, convert them into mole-balls, and “Yeet” mole-balls at enemies. The core loop:
 
 ### **Whack → Bounce → Yeet**
 
