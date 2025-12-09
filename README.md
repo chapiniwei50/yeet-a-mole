@@ -2,8 +2,9 @@
 
 # **Yeet-a-Mole 🐹🕳️🥊**
 
-**Cindy Wei (Gameplay, Animation), Zhexu Luo (Player & Tools), Joshua Zhang (AI & Boss)**
-\n **2025.11.12 ~ 2025.12.11**
+**Cindy Wei (Gameplay, Animation), Zhexu Luo (Player & Tools), Joshua Zhang (AI & Boss)**  
+<br>
+**2025.11.12 ~ 2025.12.11**
 
 
 ---
