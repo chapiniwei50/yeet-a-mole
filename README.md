@@ -36,17 +36,11 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 
 ## **🎬 Short Feature Clips**
 
-### **Whack → Bounce → Yeet Loop GIF**
 
-`![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
 
-### **Shove → Bounce → Yeet Loop GIF**
 
-`![Parry GIF](path/to/gif)` *(placeholder)*
 
-### **Tool-Swap System GIF**
 
-`![Tool Swap GIF](path/to/gif)` *(placeholder)*
 
 ### **Boss Fight Clip**
 
@@ -57,10 +51,24 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 # **🎮 Key Features**
 
 * **Three-Tool Combat System** (Bat, Shovel, Racket)
+### **Tool-Swap System GIF**
+
+`![Tool Swap GIF](path/to/gif)` *(placeholder)*
 * **Physics-driven mole-ball interactions**
+### **Whack → Bounce → Yeet Loop GIF**
+
+`![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
+### **Shove → Bounce → Yeet Loop GIF**
+
+`![Parry GIF](path/to/gif)` *(placeholder)*
 * **Wave-based enemies & projectile parries**
-* **Full tutorial (4 training rooms)**
+### **Each type of enemy**
+
+`[Boss Fight Video Placeholder]`
 * **Boss fight with multi-phase attacks**
+### **Boss Fight Clip**
+
+`[Boss Fight Video Placeholder]`
 * **VR physicality: swinging, digging, throwing**
 
 ---
