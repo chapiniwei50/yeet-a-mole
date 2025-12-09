@@ -10,16 +10,14 @@ public class TankMonster : Monster
     public AudioClip[] heavyFootstepSounds;
 
     [Header("Tank Animation")]
-    private MonsterAnimationController animationController; // Reusing same controller as Walker
+    private MonsterAnimationController animationController; // Uses spawn/walk/attack/die
     private bool isAttacking = false;
 
     protected override void Start()
     {
         monsterType = MonsterType.Tank;
-      
 
-  
-
+        // Run base Monster startup (find player, worldVariable, audio, etc.)
         base.Start();
 
         // Initialize animation controller
@@ -28,8 +26,6 @@ public class TankMonster : Monster
         {
             animationController = gameObject.AddComponent<MonsterAnimationController>();
         }
-
-       
     }
 
     protected override void StartRepeatedSounds()
@@ -48,6 +44,7 @@ public class TankMonster : Monster
         if (hp <= 0 || isAttacking) return;
 
         HandleMovement();
+        // Uses Monster.CheckForRingBreach(), which now calls our override of GetVisualCenter()
         CheckForRingBreach();
     }
 
@@ -63,18 +60,13 @@ public class TankMonster : Monster
         FacePlayer();
     }
 
-    protected override void CheckForRingBreach()
+    /// <summary>
+    /// Override visual center to ignore animationOffset for Tank.
+    /// Breach will use the Tank's root transform position.
+    /// </summary>
+    protected override Vector3 GetVisualCenter()
     {
-        if (hasBreached || playerCenter == null) return;
-
-        Vector2 monsterPos = new Vector2(transform.position.x, transform.position.z);
-        Vector2 centerPos = new Vector2(playerCenter.position.x, playerCenter.position.z);
-        float distanceFromCenter = Vector2.Distance(monsterPos, centerPos);
-
-        if (distanceFromCenter <= defenseRingRadius)
-        {
-            BreachRing();
-        }
+        return transform.position;
     }
 
     protected override void BreachRing()
@@ -97,13 +89,14 @@ public class TankMonster : Monster
             // Fallback: immediate damage and destroy
             ApplyBreachDamage();
             Destroy(gameObject);
+            return;
         }
 
-        // Damage player immediately (or you can time it with animation)
+        // Apply damage immediately (or time this with animation if you want)
         ApplyBreachDamage();
 
         // Destroy after attack animation
-        Invoke("DestroyAfterAttack", 1.5f);
+        Invoke(nameof(DestroyAfterAttack), 1.5f);
     }
 
     void DestroyAfterAttack()
@@ -120,7 +113,7 @@ public class TankMonster : Monster
         }
     }
 
-    // Override OnCollisionEnter to handle MoleBall collisions
+    // Override OnCollisionEnter to handle MoleBall collisions with tank-specific rules
     void OnCollisionEnter(Collision collision)
     {
         MoleBall ball = collision.gameObject.GetComponent<MoleBall>();
@@ -141,7 +134,7 @@ public class TankMonster : Monster
         }
         else
         {
-            // Apply damage
+            // Apply damage using Monster.TakeDamage (hit sound + flash red)
             TakeDamage(ball.damage);
             Debug.Log($"Tank took {ball.damage} damage (Explosive: {ball.isExplosive})");
         }
@@ -160,8 +153,6 @@ public class TankMonster : Monster
             if (rend) rend.material.color = original;
         }
     }
-
-
 
     protected override void Die()
     {

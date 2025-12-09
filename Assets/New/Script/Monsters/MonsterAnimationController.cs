@@ -4,15 +4,18 @@ using System.Collections;
 public class MonsterAnimationController : MonoBehaviour
 {
     [Header("Animation FBX Files")]
-    public GameObject spawnAnimationFBX;      // NEW: spawn (rise from ground)
+    public GameObject spawnAnimationFBX;      // spawn (rise from ground)
     public GameObject walkAnimationFBX;
     public GameObject attackAnimationFBX;
     public GameObject dieAnimationFBX;
 
     [Header("Animation Settings")]
-    public float spawnAnimationLength = 1.0f; // NEW
+    public float spawnAnimationLength = 1.0f;
     public float attackAnimationLength = 1.5f;
     public float deathAnimationLength = 2.0f;
+
+    [Header("Position Offset")]
+    public Vector3 animationOffset = Vector3.zero;   // <-- NEW: tweak in Inspector
 
     private GameObject currentModel;
     private Animation currentAnimation;
@@ -72,9 +75,8 @@ public class MonsterAnimationController : MonoBehaviour
 
         SwitchAnimation("attack", attackAnimationFBX, false);
 
-        // Tank's behavior: caller decides when to destroy,
-        // we don't auto-destroy here (unlike Walker).
-        // If you want auto-destroy, you can Invoke here similarly.
+        // Tank: caller (TankMonster) decides when to destroy,
+        // so we don't auto-destroy here.
     }
 
     // ---------------- DEATH ----------------
@@ -118,7 +120,9 @@ public class MonsterAnimationController : MonoBehaviour
 
         // Instantiate new animation model
         currentModel = Instantiate(animationFBX, transform);
-        currentModel.transform.localPosition = Vector3.zero;
+
+        // Apply offset here so you can line up the mesh with collider/hole
+        currentModel.transform.localPosition = animationOffset;
         currentModel.transform.localRotation = Quaternion.identity;
 
         // Get Animation component

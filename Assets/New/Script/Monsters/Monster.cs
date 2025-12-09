@@ -185,7 +185,10 @@ public class Monster : TutorialDummy
     {
         if (hasBreached || playerCenter == null) return;
 
-        Vector2 monsterPos = new Vector2(transform.position.x, transform.position.z);
+        // Use visual center (includes animationOffset)
+        Vector3 visualCenter = GetVisualCenter();
+
+        Vector2 monsterPos = new Vector2(visualCenter.x, visualCenter.z);
         Vector2 centerPos = new Vector2(playerCenter.position.x, playerCenter.position.z);
         float distanceFromCenter = Vector2.Distance(monsterPos, centerPos);
 
@@ -194,6 +197,8 @@ public class Monster : TutorialDummy
             BreachRing();
         }
     }
+
+
 
     protected virtual void BreachRing()
     {
@@ -342,4 +347,40 @@ public class Monster : TutorialDummy
 
         base.Die(); // by default, this disables the GameObject
     }
+    // Returns the "visual" center of this monster, including animation offset
+    protected virtual Vector3 GetVisualCenter()
+    {
+        Vector3 basePos = transform.position;
+        Vector3 offset = Vector3.zero;
+
+        // Walker
+        var walkerCtrl = GetComponent<WalkerAnimationController>();
+        if (walkerCtrl != null)
+        {
+            offset = walkerCtrl.animationOffset;
+        }
+        else
+        {
+            // Generic Tank / Monster animation controller
+            var tankCtrl = GetComponent<MonsterAnimationController>();
+            if (tankCtrl != null)
+            {
+                offset = tankCtrl.animationOffset;
+            }
+            else
+            {
+                // Spitter
+                var spitterCtrl = GetComponent<SpitterAnimationController>();
+                if (spitterCtrl != null)
+                {
+                    offset = spitterCtrl.animationOffset;
+                }
+            }
+        }
+
+        // Only use X/Z for ring distance (Y height doesn't matter)
+        return basePos + new Vector3(offset.x, 0f, offset.z);
+    }
+
+
 }

@@ -4,17 +4,20 @@ using System.Collections;
 public class SpitterAnimationController : MonoBehaviour
 {
     [Header("Animation FBX Files")]
-    public GameObject spawnAnimationFBX;      // NEW: spawn (rise from ground)
+    public GameObject spawnAnimationFBX;      // spawn (rise from ground)
     public GameObject walkAnimationFBX;
     public GameObject idleAnimationFBX;       // Idle animation when stopped
     public GameObject shootAnimationFBX;
     public GameObject dieAnimationFBX;
 
     [Header("Animation Timing")]
-    public float spawnAnimationLength = 1.0f; // NEW
+    public float spawnAnimationLength = 1.0f;
     public float shootAnimationLength = 1.0f;
     public float deathAnimationLength = 2.0f;
     public float returnToIdleDelay = 0.3f;    // Delay after shooting before returning to idle
+
+    [Header("Position Offset")]
+    public Vector3 animationOffset = Vector3.zero;   // <- NEW: tweak per spitter
 
     private GameObject currentModel;
     private Animation currentAnimation;
@@ -150,7 +153,9 @@ public class SpitterAnimationController : MonoBehaviour
 
         // Instantiate new animation model
         currentModel = Instantiate(animationFBX, transform);
-        currentModel.transform.localPosition = Vector3.zero;
+
+        //  Apply offset so mesh lines up with hole/collider
+        currentModel.transform.localPosition = animationOffset;
         currentModel.transform.localRotation = Quaternion.identity;
 
         // Get Animation component

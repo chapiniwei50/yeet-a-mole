@@ -117,9 +117,9 @@ public class ToolHitDetector : MonoBehaviour
         if (!MatchesTargetTags(other))
             return;
 
-        // Must be holding trigger
-        if (!IsTriggerHeld())
-            return;
+        //// Must be holding trigger
+        //if (!IsTriggerHeld())
+        //    return;
 
         // Must be swinging in the correct direction
         if (!IsSwingDirectionValid() && swingType != SwingType.ForwardOnly)

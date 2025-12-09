@@ -4,15 +4,18 @@ using System.Collections;
 public class WalkerAnimationController : MonoBehaviour
 {
     [Header("Animation FBX Files")]
-    public GameObject spawnAnimationFBX;   // NEW: spawn (rise from ground)
+    public GameObject spawnAnimationFBX;      // spawn (rise from ground)
     public GameObject walkAnimationFBX;
     public GameObject attackAnimationFBX;
     public GameObject dieAnimationFBX;
 
     [Header("Animation Settings")]
-    public float spawnAnimationLength = 1.0f;   // NEW: how long the spawn clip is
+    public float spawnAnimationLength = 1.0f;
     public float attackAnimationLength = 1.5f;
     public float deathAnimationLength = 2.0f;
+
+    [Header("Position Offset")]
+    public Vector3 animationOffset = Vector3.zero;   // <- tweak this per monster
 
     private GameObject currentModel;
     private Animation currentAnimation;
@@ -31,7 +34,7 @@ public class WalkerAnimationController : MonoBehaviour
         }
         else
         {
-            // Fallback: go straight to walk if no spawn animation assigned
+            // Fallback: go straight to walk
             PlayWalkAnimation();
         }
     }
@@ -44,8 +47,6 @@ public class WalkerAnimationController : MonoBehaviour
 
         isSpawning = true;
         SwitchAnimation("spawn", spawnAnimationFBX, false);
-
-        // After spawn animation finishes, go into walk loop
         StartCoroutine(SpawnThenWalk());
     }
 
@@ -74,8 +75,14 @@ public class WalkerAnimationController : MonoBehaviour
 
         SwitchAnimation("attack", attackAnimationFBX, false);
 
-        // After attack animation, the monster will be destroyed
+        // For Walker we usually destroy after the attack finishes:
         Invoke(nameof(DestroyAfterAttack), attackAnimationLength);
+    }
+
+    private void DestroyAfterAttack()
+    {
+        // Walker dies after its attack animation
+        Destroy(gameObject);
     }
 
     // ---------------- DEATH ----------------
@@ -84,13 +91,21 @@ public class WalkerAnimationController : MonoBehaviour
     {
         if (currentState == "die") return;
 
-        // If we're in the middle of spawning, stop that state
         isSpawning = false;
 
         SwitchAnimation("die", dieAnimationFBX, false);
 
-        // Destroy after death animation
         Invoke(nameof(DestroyAfterDeath), deathAnimationLength);
+    }
+
+    private void DestroyAfterDeath()
+    {
+        if (monster != null)
+        {
+            monster.gameObject.SetActive(false);
+        }
+
+        Destroy(gameObject, 0.5f);
     }
 
     // ---------------- CORE SWITCH ----------------
@@ -99,7 +114,7 @@ public class WalkerAnimationController : MonoBehaviour
     {
         if (animationFBX == null)
         {
-            Debug.LogWarning($"WalkerAnimationController: No FBX assigned for state '{newState}'");
+            Debug.LogWarning($"WalkerAnimationController: No FBX assigned for state {newState}");
             return;
         }
 
@@ -111,7 +126,9 @@ public class WalkerAnimationController : MonoBehaviour
 
         // Instantiate new animation model
         currentModel = Instantiate(animationFBX, transform);
-        currentModel.transform.localPosition = Vector3.zero;
+
+        //  Apply the offset so you can line the mesh up with collider/hole
+        currentModel.transform.localPosition = animationOffset;
         currentModel.transform.localRotation = Quaternion.identity;
 
         // Get Animation component
@@ -142,21 +159,7 @@ public class WalkerAnimationController : MonoBehaviour
         }
     }
 
-    void DestroyAfterAttack()
-    {
-        Destroy(gameObject);
-    }
-
-    void DestroyAfterDeath()
-    {
-        // Disable the monster but don't destroy immediately
-        if (monster != null)
-        {
-            monster.gameObject.SetActive(false);
-        }
-
-        Destroy(gameObject, 0.5f);
-    }
+    // ---------------- HELPERS ----------------
 
     public bool IsPlaying(string state)
     {

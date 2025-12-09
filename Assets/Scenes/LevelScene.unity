@@ -792,6 +792,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -812,6 +816,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
@@ -840,9 +848,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1413222888}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11878,6 +11894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -11898,6 +11918,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -11914,9 +11938,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1938587284}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13100,6 +13132,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -13120,6 +13156,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -13136,9 +13176,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 221656980}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14160,16 +14208,16 @@ MonoBehaviour:
   - waveNumber: 1
     basicCount: 2
     spitterCount: 0
-    tankCount: 1
+    tankCount: 0
     spawnInterval: 15
   - waveNumber: 2
-    basicCount: 1
+    basicCount: 0
     spitterCount: 1
     tankCount: 0
     spawnInterval: 15
   - waveNumber: 3
     basicCount: 1
-    spitterCount: 1
+    spitterCount: 0
     tankCount: 1
     spawnInterval: 15
   walkerPrefab: {fileID: 1101597048596877429, guid: 28a6d2021ef1ad44e9ecb564f4bd4490, type: 3}
@@ -14492,7 +14540,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1041023787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MoleSpawners
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16007,6 +16055,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -16027,6 +16079,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -16043,9 +16099,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1146404648}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16623,7 +16687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 8806329115733545878, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_LocalRotation.w
@@ -18264,6 +18328,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -18284,6 +18352,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -18300,9 +18372,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 548355979}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21893,6 +21973,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1041023787}
     m_Modifications:
+    - target: {fileID: 904201810762622367, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1625995374061334599, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: maxSpawnTime
       value: 10
@@ -21913,6 +21997,10 @@ PrefabInstance:
       propertyPath: moleExplosivePrefab
       value: 
       objectReference: {fileID: 7215979391716200548, guid: 6dce5a8f938f2904a982a5cece9f310e, type: 3}
+    - target: {fileID: 2256926841188377607, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3258811129571929215, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -21929,9 +22017,17 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2019736871}
+    - target: {fileID: 6295892752334445039, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_Name
       value: MoleHole_Prefab (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506627976245312495, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8177378961748342104, guid: 5f2b99e9e3dc95342a44d8bf2341c8ce, type: 3}
       propertyPath: m_LocalPosition.x

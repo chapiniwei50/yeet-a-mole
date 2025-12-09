@@ -9,7 +9,7 @@ public class WalkerMonster : Monster
     {
         monsterType = MonsterType.Walker;
 
- 
+
 
         // Add animation controller if not present
         animationController = GetComponent<WalkerAnimationController>();
@@ -87,7 +87,7 @@ public class WalkerMonster : Monster
         Destroy(gameObject);
     }
 
- 
+
 
 
     protected override void Die()
