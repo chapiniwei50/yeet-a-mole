@@ -20,13 +20,6 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 
 ---
 
-# **🎥 Media Gallery**
-
-## **📺 Trailer**
-
-> `[Trailer Placeholder]`
-
----
 
 ## **🕹️ Gameplay Demo **
 
