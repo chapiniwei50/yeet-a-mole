@@ -36,10 +36,6 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 
 ## **🎬 Short Feature Clips**
 
-### **Tutorial Room GIF**
-
-`![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
-
 ### **Whack → Bounce → Yeet Loop GIF**
 
 `![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
@@ -87,9 +83,17 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 
 Bat → Shovel → Racket → Parry
 
+### **Tutorial Room GIF**
+
+`![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
+
 ### **Main Level**
 
 Wave-based encounter → Boss battle
+
+### **Main Level GIF**
+
+`![Whack-Bounce-Yeet GIF](path/to/gif)` *(placeholder)*
 
 ---
 
