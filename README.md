@@ -21,7 +21,7 @@ Survive waves of Walkers, Spitters, and Tanks, and defeat a multi-phase **Final 
 ---
 
 
-## **🕹️ Gameplay Demo **
+## 🕹️ Gameplay Demo 
 
 > `[Gameplay Demo Placeholder]`
 
