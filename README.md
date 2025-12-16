@@ -23,8 +23,7 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 ## 🕹️ Full Gameplay Video
 
-[![Yeet-a-Mole Gameplay](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-
+[![Yeet-a-Mole Gameplay](https://img.youtube.com/vi/g-0qPlhva8I/0.jpg)](https://youtu.be/g-0qPlhva8I)
 
 ---
 
