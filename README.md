@@ -6,7 +6,7 @@
 **Development Period:** 2025.11.12 – 2025.12.11
 <br/>
 
-<img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="720" />
+<img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" />
 
 ---
 
