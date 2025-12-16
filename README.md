@@ -1,10 +1,11 @@
 # **Yeet-a-Mole 🐹🕳️🥊**
 
-**Cindy Wei, Zhexu Luo, Joshua Zhang**
-<br></br>
-**Development Period:** 2025.11.12 – 2025.12.11
-![yeet-a-mole-cover-ezgif com-optimize](https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8)
 
+![yeet-a-mole-cover-ezgif com-optimize](https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8)
+**Cindy Wei, Zhexu Luo, Joshua Zhang**
+<br>
+**Development Period:** 2025.11.12 – 2025.12.11
+</br>
 ---
 
 ## **📌 Overview**
