@@ -82,6 +82,8 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 
 ### **Final Boss (Multi-Phase)**
 
+![2025121523203-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/464fd91e-e5e9-4241-96b2-e912e3419d3e)
+
 * Teleports around the arena
 * Throws **non-redirectable boulders**
 * Summons a **ring of explosive moles** around the player
@@ -92,19 +94,32 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 
 # **🧪 Tutorial Rooms**
 
-Before entering the main level, players complete **four guided tutorial rooms** that introduce mechanics step-by-step in a controlled environment.
+Before entering the main level, players complete **four guided tutorial rooms** that introduce mechanics step-by-step in a controlled environment. Players must complete each room before progressing.
 
-1. **Bat & Regular Moles** – Whack brown moles to create normal mole-balls
-2. **Explosive Moles & Shovel** – Safely dig red moles to create explosive ammo
-3. **Mole-Balls & Racket** – Bounce and Yeet mole-balls at target dummies
-4. **Projectile Parrying** – Reflect enemy projectiles with precise racket timing
+**ROOM 1: Bat & Regular Moles** – Whack brown moles to create normal mole-balls
 
-Players must complete each room before progressing.
+https://github.com/user-attachments/assets/57bee93d-acbf-4e78-b0c0-f39279f8d358
+
+**ROOM 2: Explosive Moles & Shovel** – Safely dig red moles to create explosive ammo
+   
+https://github.com/user-attachments/assets/328d6609-2766-42a1-838c-27d2aa774197
+
+**ROOM 3: Mole-Balls & Racket** – Bounce and Yeet mole-balls at target dummies
+   
+https://github.com/user-attachments/assets/b4b7df71-8148-4039-8039-b2f3fc432688
+
+**ROOM 4: Projectile Parrying** – Reflect enemy projectiles with precise racket timing
+
+https://github.com/user-attachments/assets/850cf3d4-0823-4b86-b459-78344beccb09
+
+
+
+
 
 ---
 
 # **📝 Gameplay Summary**
-
+4
 * **Whack** brown moles with the **Bat** → normal mole-ball
 * **Dig** red (explosive) moles with the **Shovel** → explosive mole-ball
 * **Bounce** mole-ball once → charged (yellow)
