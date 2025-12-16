@@ -1,9 +1,12 @@
+
 # **Yeet-a-Mole 🐹🕳️🥊**
-Cindy Wei, Zhexu Luo, Joshua Zhang
-<br>
-Development Period: 2025.11.12 – 2025.12.11
-</br>
-![yeet-a-mole-cover-ezgif com-optimize](https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8)
+
+**Cindy Wei, Zhexu Luo, Joshua Zhang**
+**Development Period:** 2025.11.12 – 2025.12.11
+
+<br/>
+
+<img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="720" />
 
 ---
 
@@ -17,19 +20,25 @@ Using three tools—**Bat**, **Shovel**, and **Racket**—players convert differ
 
 The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss**. Walkers apply steady pressure, Spitters attack from range with parry-able projectiles, and Tanks are armored enemies that require explosive damage. The final encounter escalates with teleportation, arena-control attacks, explosive mole rings, and summoned minions.
 
-https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
+---
+
+## 🕹️ Gameplay Preview
+
+[https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928](https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928)
 
 ---
 
 ## 🕹️ Full Gameplay Video
 
-[![Yeet-a-Mole Gameplay](https://img.youtube.com/vi/g-0qPlhva8I/0.jpg)](https://youtu.be/g-0qPlhva8I)
+<a href="https://youtu.be/g-0qPlhva8I">
+  <img src="https://img.youtube.com/vi/g-0qPlhva8I/0.jpg" width="720" />
+</a>
 
 ---
 
 # **🎮 Key Features**
 
-### **Three-Tool Combat System**
+## **Three-Tool Combat System**
 
 * **Bat** – Whack regular moles into mole-balls
 * **Shovel** – Safely dig up explosive moles
@@ -37,61 +46,64 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 ---
 
-### **VR Physicality**
+## **VR Physicality**
 
-* All combat is driven by physical motion and real-time collisions
-* Full arm-swing combat
-* Natural throwing, batting, and digging motions
+* Physics-driven combat using real-world motion
+* Full arm-swing interactions
+* Natural throwing, batting, and digging
 * Mole-balls respond to swing speed, impact angle, and timing
 
 ---
 
-### **Enemies & Boss**
+## **Enemies & Boss**
 
-* **Walker:** Advances toward the defense line at moderate speed; weak to knockback
-  
+### **Walker**
 
-https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407
+<img src="https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407" width="720" />
 
+* Moderate speed
+* Weak to knockback
 
-* **Spitter:** Slow-moving ranged enemy that fires **parry-able projectiles**
+---
 
+### **Spitter**
 
-https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1
+<img src="https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1" width="720" />
 
+* Slow-moving ranged enemy
+* Fires **parry-able projectiles**
 
-* **Tank:** Armored enemy with higher HP; resists knockback and is vulnerable to **explosive mole-balls only**
+---
 
+### **Tank**
 
-https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be
+<img src="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be" width="720" />
 
+* Armored enemy with higher HP
+* Vulnerable to **explosive mole-balls only**
 
-**Final Boss (Multi-Phase):**
+---
 
+### **Final Boss (Multi-Phase)**
 
+* Teleports around the arena
 * Throws **non-redirectable boulders**
 * Summons a **ring of explosive moles** around the player
-* Spawns minion waves (Walkers, Spitters, Tanks)
+* Spawns mixed enemy waves
 * Temporarily accelerates enemy actions
 
 ---
 
 # **🧪 Tutorial Rooms**
 
-Before entering the main level, players complete **four guided tutorial rooms** designed to gradually introduce core mechanics in a controlled environment. Each room focuses on a single concept to build confidence and muscle memory in VR. Players must complete each room’s objective before progressing
+Before entering the main level, players complete **four guided tutorial rooms** that introduce mechanics step-by-step in a controlled environment.
 
-* **Room 1 – Bat & Regular Moles**
-  Learn to identify and **whack regular moles** using the Bat to create normal mole-balls.
+1. **Bat & Regular Moles** – Whack brown moles to create normal mole-balls
+2. **Explosive Moles & Shovel** – Safely dig red moles to create explosive ammo
+3. **Mole-Balls & Racket** – Bounce and Yeet mole-balls at target dummies
+4. **Projectile Parrying** – Reflect enemy projectiles with precise racket timing
 
-* **Room 2 – Explosive Moles & Shovel**
-  Learn the danger of **red (explosive) moles** and practice using the Shovel instead of the Bat to safely convert them into explosive ammo.
-
-* **Room 3 – Mole-Balls & Racket**
-  Practice **bouncing mole-balls** to charge them and **Yeeting** them with the Racket at a target dummy.
-
-* **Room 4 – Enemy Projectiles & Parrying**
-  Learn how to **time racket swings** to parry incoming projectiles and turn enemy attacks back against them.
-
+Players must complete each room before progressing.
 
 ---
 
@@ -99,8 +111,8 @@ Before entering the main level, players complete **four guided tutorial rooms** 
 
 * **Whack** brown moles with the **Bat** → normal mole-ball
 * **Dig** red (explosive) moles with the **Shovel** → explosive mole-ball
-* **Bounce** mole-ball on the ground → turns yellow when bounced(charged)
-* **Yeet** charged mole-ball with the **Racket** at enemies
+* **Bounce** mole-ball once → charged (yellow)
+* **Yeet** charged mole-ball with the **Racket**
 
 Enemies that cross the fence reduce player HP.
 When HP reaches **0**, the game ends.
@@ -126,10 +138,8 @@ Defend your farm from the mole invasion. Survive enemy waves and defeat the fina
 ### **Left Hand – Mole-Ball Interaction**
 
 * **Trigger (Hold):** Pick up and hold a mole-ball
-* **Joystick Pull (while holding trigger):** Pull mole-ball closer
+* **Joystick Pull:** Pull mole-ball closer
 * **Trigger (Release):** Throw mole-ball
-
-  > *You must be holding the ball before releasing to throw*
 * **Button X:** Proceed to the next tutorial room
 
 ---
@@ -138,7 +148,7 @@ Defend your farm from the mole invasion. Survive enemy waves and defeat the fina
 
 * **Button A:** Cycle tools
   **Bat → Shovel → Racket → Bat**
-* **Trigger:** Confirm tool usage 
+* **Trigger:** Confirm tool usage
 
 ---
 
@@ -147,13 +157,14 @@ Defend your farm from the mole invasion. Survive enemy waves and defeat the fina
 * **Bat:** Hit brown moles only
 * **Shovel:** Dig red (explosive) moles
   ⚠️ *Hitting red moles with the Bat damages the player*
-* **Bounce:** Bounce mole-balls once to charge them
+* **Bounce:** Bounce mole-balls once to charge
 * **Yeet:** Hit glowing yellow balls with the Racket
-* **Win/Loss:**
 
-  * Survive through all waves of enemies → Win Game
-  * Enemies crossing the fence → lose HP
-  * HP reaches 0 → Game Over
+**Win / Loss Conditions**
+
+* Survive all waves → **Win**
+* Enemies crossing the fence → lose HP
+* HP reaches 0 → **Game Over**
 
 ---
 
@@ -172,7 +183,6 @@ Defend your farm from the mole invasion. Survive enemy waves and defeat the fina
      `Project Settings → XR Plug-in Management`
 
 ---
-
 
 # **🛠️ Technical Issues Encountered**
 
@@ -214,7 +224,5 @@ Racket impacts are sensitive to collision angles. An unresolved edge case remain
 * Mole Models
 * Sound Effects Pack
 
-
-* Write a **postmortem / what we learned** section
-* Or format it **exactly** to CIS 5680 final submission standards
+---
 
