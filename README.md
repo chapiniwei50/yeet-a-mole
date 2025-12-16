@@ -19,12 +19,8 @@
 Using three tools—**Bat**, **Shovel**, and **Racket**—players convert different mole types into mole-balls, bounce them to charge, and “Yeet” them back at incoming enemies.
 
 The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss**. Walkers apply steady pressure, Spitters attack from range with parry-able projectiles, and Tanks are armored enemies that require explosive damage. The final encounter escalates with teleportation, arena-control attacks, explosive mole rings, and summoned minions.
+![mole_spawning-ezgif com-optimize](https://github.com/user-attachments/assets/c89db522-e82c-4ce3-abab-bb0ae9515c88)
 
----
-
-## 🕹️ Gameplay Preview
-
-[https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928](https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928)
 
 ---
 
@@ -59,7 +55,7 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 
 ### **Walker**
 
-<img src="https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407" width="720" />
+![walker-ezgif com-optimize](https://github.com/user-attachments/assets/ee289298-8c15-41f2-b223-ad2ae513c697)
 
 * Moderate speed
 * Weak to knockback
@@ -68,7 +64,7 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 
 ### **Spitter**
 
-<img src="https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1" width="720" />
+![spitter-ezgif com-optimize](https://github.com/user-attachments/assets/8b2bd8e0-fe41-409c-b815-1eaeaed2d403)
 
 * Slow-moving ranged enemy
 * Fires **parry-able projectiles**
@@ -77,7 +73,7 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 
 ### **Tank**
 
-<img src="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be" width="720" />
+![tank-ezgif com-optimize](https://github.com/user-attachments/assets/a3992bac-519a-48f4-82ec-e76f7017e63e)
 
 * Armored enemy with higher HP
 * Vulnerable to **explosive mole-balls only**
