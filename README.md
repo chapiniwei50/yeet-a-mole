@@ -2,6 +2,7 @@
 
 **Cindy Wei, Zhexu Luo, Joshua Zhang**
 **Development Period:** 2025.11.12 – 2025.12.11
+![yeet-a-mole-cover-ezgif com-optimize](https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8)
 
 ---
 
@@ -14,6 +15,8 @@
 Using three tools—**Bat**, **Shovel**, and **Racket**—players convert different mole types into mole-balls, bounce them to charge, and “Yeet” them back at incoming enemies.
 
 The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss**. Walkers apply steady pressure, Spitters attack from range with parry-able projectiles, and Tanks are armored enemies that require explosive damage. The final encounter escalates with teleportation, arena-control attacks, explosive mole rings, and summoned minions.
+
+https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 ---
 
@@ -46,8 +49,22 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 ### **Enemies & Boss**
 
 * **Walker:** Advances toward the defense line at moderate speed; weak to knockback
+  
+
+https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407
+
+
 * **Spitter:** Slow-moving ranged enemy that fires **parry-able projectiles**
+
+
+https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1
+
+
 * **Tank:** Armored enemy with higher HP; resists knockback and is vulnerable to **explosive mole-balls only**
+
+
+https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be
+
 
 **Final Boss (Multi-Phase):**
 
