@@ -78,7 +78,7 @@ https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be
 
 # **🧪 Tutorial Rooms**
 
-Before entering the main level, players complete **four guided tutorial rooms** designed to gradually introduce core mechanics in a controlled environment. Each room focuses on a single concept to build confidence and muscle memory in VR.
+Before entering the main level, players complete **four guided tutorial rooms** designed to gradually introduce core mechanics in a controlled environment. Each room focuses on a single concept to build confidence and muscle memory in VR. Players must complete each room’s objective before progressing
 
 * **Room 1 – Bat & Regular Moles**
   Learn to identify and **whack regular moles** using the Bat to create normal mole-balls.
@@ -92,7 +92,7 @@ Before entering the main level, players complete **four guided tutorial rooms** 
 * **Room 4 – Enemy Projectiles & Parrying**
   Learn how to **time racket swings** to parry incoming projectiles and turn enemy attacks back against them.
 
-Players must complete each room’s objective before progressing
+
 ---
 
 # **📝 Gameplay Summary**
