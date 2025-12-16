@@ -27,7 +27,7 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 ## 🕹️ Full Gameplay Video
 
 <a href="https://youtu.be/g-0qPlhva8I">
-  <img src="https://img.youtube.com/vi/g-0qPlhva8I/0.jpg" width="720" />
+  <img src="https://img.youtube.com/vi/g-0qPlhva8I/0.jpg" />
 </a>
 
 ---
