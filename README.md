@@ -1,4 +1,4 @@
-# **Yeet-a-Mole 🐹🕳️🥊**
+# **Yeet a Mole 🐹🕳️🥊**
 
 **Cindy Wei, Zhexu Luo, Joshua Zhang**  
 
