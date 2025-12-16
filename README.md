@@ -74,12 +74,11 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 | <a href="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be"><img src="https://github.com/user-attachments/assets/be6f3cb5-1d6c-4a27-8420-0e7bee81189e" width="340"/></a> | <a href="https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928"><img src="https://github.com/user-attachments/assets/e0588d58-457e-46fe-947b-979fefe69827" width="340"/></a> |
 | Armored<br/>Explosive damage only | Multi-phase boss<br/>Arena-control mechanics |
 
-**Final Boss Abilities**
-- Teleportation  
+**Final Boss Abilities** 
 - Non-redirectable boulder throws  
 - Explosive mole ring summon  
 - Minion waves (Walkers, Spitters, Tanks)  
-- Temporary enemy speed-up  
+ 
 
 
 ---
