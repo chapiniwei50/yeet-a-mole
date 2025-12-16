@@ -65,16 +65,16 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 # **👾 Enemies & Boss**
 
-### **Enemy Roster (Overview)**
+### **Enemy Roster**
 
 | Walker | Spitter |
 |:--:|:--:|
-| <a href="https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> | <a href="https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> |
+| <a href="https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407"><img src="https://github.com/user-attachments/assets/d6bcb459-f38b-4ad6-83be-a2bbbcf3e27a" width="340"/></a> | <a href="https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1"><img src="https://github.com/user-attachments/assets/6f5d4596-d0e9-4b8a-8203-90e9e652f30e" width="340"/></a> |
 | Moderate speed<br/>Weak to knockback | Ranged enemy<br/>Parry-able projectiles |
 
 | Tank | Final Boss |
 |:--:|:--:|
-| <a href="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> | <a href="https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> |
+| <a href="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be"><img src="https://github.com/user-attachments/assets/be6f3cb5-1d6c-4a27-8420-0e7bee81189e" width="340"/></a> | <a href="https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928"><img src="https://github.com/user-attachments/assets/e0588d58-457e-46fe-947b-979fefe69827" width="340"/></a> |
 | Armored<br/>Explosive damage only | Multi-phase boss<br/>Arena-control mechanics |
 
 **Final Boss Abilities**
@@ -84,6 +84,7 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 - Minion waves (Walkers, Spitters, Tanks)  
 - Temporary enemy speed-up  
 
+
 ---
 
 
@@ -91,10 +92,21 @@ https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 Before entering the main level, players complete **four guided tutorial rooms**:
 
-1. **Bat & Regular Moles** – Whack brown moles into normal ammo  
-2. **Explosive Moles & Shovel** – Learn safe handling of red moles  
-3. **Mole-Balls & Racket** – Bounce and Yeet charged balls  
-4. **Projectile Parrying** – Reflect enemy projectiles  
+**ROOM1: Bat & Regular Moles** – Whack brown moles into normal ammo  
+
+https://github.com/user-attachments/assets/dd807269-f6f7-434b-bf29-8d43b852f819
+
+**ROOM2: Explosive Moles & Shovel** – Learn safe handling of red moles  
+
+https://github.com/user-attachments/assets/b7b15d05-a63a-4f6a-9556-d567a8662e42
+
+**ROOM3: Mole-Balls & Racket** – Bounce and Yeet charged balls  
+
+https://github.com/user-attachments/assets/c238f258-7371-4515-8b3b-ee5d11a3d4af
+
+**ROOM4: Projectile Parrying** – Reflect enemy projectiles  
+
+https://github.com/user-attachments/assets/f2175bec-a307-41bc-8517-82ef9ff4dca2
 
 Each room must be completed before progressing.
 
