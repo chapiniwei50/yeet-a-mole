@@ -33,9 +33,6 @@ Using three tools—**Bat**, **Shovel**, and **Racket**—players convert differ
 
 The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss** with teleportation, arena-control attacks, and minion summons.
 
----
-
-## 🕹️ Gameplay Preview
 
 https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
