@@ -1,13 +1,26 @@
-
 # **Yeet-a-Mole 🐹🕳️🥊**
 
-**Cindy Wei, Zhexu Luo, Joshua Zhang**
-<br>
-**Development Period:** 2025.11.12 – 2025.12.11
+**Cindy Wei, Zhexu Luo, Joshua Zhang**  
+
+**Development Period:** 2025.11.12 – 2025.12.11  
 <br/>
 
-<img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" />
+<img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="720" />
 
+---
+
+## 📚 Table of Contents
+1. [Overview](#-overview)
+2. [Gameplay Preview](#-gameplay-preview)
+3. [Full Gameplay Video](#-full-gameplay-video)
+4. [Key Features](#-key-features)
+5. [Enemies & Boss](#-enemies--boss)
+6. [Tutorial Rooms](#-tutorial-rooms)
+7. [Gameplay Summary](#-gameplay-summary)
+8. [How to Play](#-how-to-play)
+9. [Setup & Configuration](#-setup--configuration)
+10. [Technical Issues Encountered](#-technical-issues-encountered)
+11. [Assets & Plugins Used](#-assets--plugins-used)
 ---
 
 ## **📌 Overview**
@@ -18,16 +31,20 @@
 
 Using three tools—**Bat**, **Shovel**, and **Racket**—players convert different mole types into mole-balls, bounce them to charge, and “Yeet” them back at incoming enemies.
 
-The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss**. Walkers apply steady pressure, Spitters attack from range with parry-able projectiles, and Tanks are armored enemies that require explosive damage. The final encounter escalates with teleportation, arena-control attacks, explosive mole rings, and summoned minions.
-![mole_spawning-ezgif com-optimize](https://github.com/user-attachments/assets/c89db522-e82c-4ce3-abab-bb0ae9515c88)
+The game features **three enemy types—Walkers, Spitters, and Tanks—followed by a multi-phase Final Boss** with teleportation, arena-control attacks, and minion summons.
 
+---
+
+## 🕹️ Gameplay Preview
+
+https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928
 
 ---
 
 ## 🕹️ Full Gameplay Video
 
 <a href="https://youtu.be/g-0qPlhva8I">
-  <img src="https://img.youtube.com/vi/g-0qPlhva8I/0.jpg" />
+  <img src="https://img.youtube.com/vi/g-0qPlhva8I/0.jpg" width="720" />
 </a>
 
 ---
@@ -35,205 +52,121 @@ The game features **three enemy types—Walkers, Spitters, and Tanks—followed 
 # **🎮 Key Features**
 
 ## **Three-Tool Combat System**
-
-* **Bat** – Whack regular moles into mole-balls
-* **Shovel** – Safely dig up explosive moles
-* **Racket** – Yeet charged mole-balls at enemies
-
----
+- **Bat** – Whack regular moles into mole-balls  
+- **Shovel** – Safely dig up explosive moles  
+- **Racket** – Yeet charged mole-balls at enemies  
 
 ## **VR Physicality**
-
-* Physics-driven combat using real-world motion
-* Full arm-swing interactions
-* Natural throwing, batting, and digging
-* Mole-balls respond to swing speed, impact angle, and timing
+- Physics-driven combat using real-world motion  
+- Full arm-swing interactions  
+- Natural throwing, batting, and digging  
 
 ---
 
-## **Enemies & Boss**
+# **👾 Enemies & Boss**
 
-### **Walker**
+### **Enemy Roster (Overview)**
 
-![walker-ezgif com-optimize](https://github.com/user-attachments/assets/ee289298-8c15-41f2-b223-ad2ae513c697)
+| Walker | Spitter |
+|:--:|:--:|
+| <a href="https://github.com/user-attachments/assets/ae0c6431-dc89-4ee6-aeb7-6f1f0da0e407"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> | <a href="https://github.com/user-attachments/assets/d859c2fd-b176-4496-a03b-b758280b33f1"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> |
+| Moderate speed<br/>Weak to knockback | Ranged enemy<br/>Parry-able projectiles |
 
-* Moderate speed
-* Weak to knockback
+| Tank | Final Boss |
+|:--:|:--:|
+| <a href="https://github.com/user-attachments/assets/a1c9db53-1c89-4898-b6cf-2d3612ee07be"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> | <a href="https://github.com/user-attachments/assets/ef12f287-4ea0-4023-ae7e-74f1f5412928"><img src="https://github.com/user-attachments/assets/a4430dff-96c7-4934-b8bb-59a0ab6491c8" width="340"/></a> |
+| Armored<br/>Explosive damage only | Multi-phase boss<br/>Arena-control mechanics |
 
----
-
-### **Spitter**
-
-![spitter-ezgif com-optimize](https://github.com/user-attachments/assets/8b2bd8e0-fe41-409c-b815-1eaeaed2d403)
-
-* Slow-moving ranged enemy
-* Fires **parry-able projectiles**
-
----
-
-### **Tank**
-
-![tank-ezgif com-optimize](https://github.com/user-attachments/assets/a3992bac-519a-48f4-82ec-e76f7017e63e)
-
-* Armored enemy with higher HP
-* Vulnerable to **explosive mole-balls only**
+**Final Boss Abilities**
+- Teleportation  
+- Non-redirectable boulder throws  
+- Explosive mole ring summon  
+- Minion waves (Walkers, Spitters, Tanks)  
+- Temporary enemy speed-up  
 
 ---
 
-### **Final Boss (Multi-Phase)**
-
-![2025121523203-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/464fd91e-e5e9-4241-96b2-e912e3419d3e)
-
-* Teleports around the arena
-* Throws **non-redirectable boulders**
-* Summons a **ring of explosive moles** around the player
-* Spawns mixed enemy waves
-* Temporarily accelerates enemy actions
-
----
 
 # **🧪 Tutorial Rooms**
 
-Before entering the main level, players complete **four guided tutorial rooms** that introduce mechanics step-by-step in a controlled environment. Players must complete each room before progressing.
+Before entering the main level, players complete **four guided tutorial rooms**:
 
-**ROOM 1: Bat & Regular Moles** – Whack brown moles to create normal mole-balls
+1. **Bat & Regular Moles** – Whack brown moles into normal ammo  
+2. **Explosive Moles & Shovel** – Learn safe handling of red moles  
+3. **Mole-Balls & Racket** – Bounce and Yeet charged balls  
+4. **Projectile Parrying** – Reflect enemy projectiles  
 
-https://github.com/user-attachments/assets/57bee93d-acbf-4e78-b0c0-f39279f8d358
-
-**ROOM 2: Explosive Moles & Shovel** – Safely dig red moles to create explosive ammo
-   
-https://github.com/user-attachments/assets/328d6609-2766-42a1-838c-27d2aa774197
-
-**ROOM 3: Mole-Balls & Racket** – Bounce and Yeet mole-balls at target dummies
-   
-https://github.com/user-attachments/assets/b4b7df71-8148-4039-8039-b2f3fc432688
-
-**ROOM 4: Projectile Parrying** – Reflect enemy projectiles with precise racket timing
-
-https://github.com/user-attachments/assets/850cf3d4-0823-4b86-b459-78344beccb09
-
-
-
-
+Each room must be completed before progressing.
 
 ---
 
 # **📝 Gameplay Summary**
-4
-* **Whack** brown moles with the **Bat** → normal mole-ball
-* **Dig** red (explosive) moles with the **Shovel** → explosive mole-ball
-* **Bounce** mole-ball once → charged (yellow)
-* **Yeet** charged mole-ball with the **Racket**
 
-Enemies that cross the fence reduce player HP.
-When HP reaches **0**, the game ends.
+- **Whack** → normal mole-ball  
+- **Dig** → explosive mole-ball  
+- **Bounce** → charged (yellow)  
+- **Yeet** → damage enemies  
+
+Enemies crossing the fence reduce HP.  
+HP reaches **0** → Game Over.
 
 ---
 
 # **📖 How to Play**
 
 ## **Objective**
-
-Defend your farm from the mole invasion. Survive enemy waves and defeat the final boss by correctly matching tools to mole types and mastering the Whack → Bounce → Yeet loop.
-
----
+Survive enemy waves and defeat the final boss by mastering the Whack → Bounce → Yeet loop.
 
 ## **Controls (Meta Quest 3)**
 
-### **Movement & View**
+**Left Hand**
+- Trigger (Hold): Pick up mole-ball  
+- Trigger (Release): Throw  
+- Button X: Next tutorial room  
 
-* All movement and camera control are based on the player’s **physical movement** in the real world
-
----
-
-### **Left Hand – Mole-Ball Interaction**
-
-* **Trigger (Hold):** Pick up and hold a mole-ball
-* **Joystick Pull:** Pull mole-ball closer
-* **Trigger (Release):** Throw mole-ball
-* **Button X:** Proceed to the next tutorial room
-
----
-
-### **Right Hand – Tool Switching & Use**
-
-* **Button A:** Cycle tools
-  **Bat → Shovel → Racket → Bat**
-* **Trigger:** Confirm tool usage
-
----
-
-## **Gameplay Rules**
-
-* **Bat:** Hit brown moles only
-* **Shovel:** Dig red (explosive) moles
-  ⚠️ *Hitting red moles with the Bat damages the player*
-* **Bounce:** Bounce mole-balls once to charge
-* **Yeet:** Hit glowing yellow balls with the Racket
-
-**Win / Loss Conditions**
-
-* Survive all waves → **Win**
-* Enemies crossing the fence → lose HP
-* HP reaches 0 → **Game Over**
+**Right Hand**
+- Button A: Cycle tools  
+- Trigger: Confirm usage  
 
 ---
 
 # **⚙️ Setup & Configuration**
 
-* **Platform:** Meta Quest 3
-* **Installation:**
-
-  * Sideload `Yeet-a-Mole.apk` using **Meta Quest Developer Hub** or **SideQuest**
-* **Unity Version:** Unity 6 (6000.0.x)
-* **Development Setup:**
-
-  1. Open the project in Unity
-  2. Set **Build Target: Android**
-  3. Enable **OpenXR** under
-     `Project Settings → XR Plug-in Management`
+- **Platform:** Meta Quest 3  
+- **Installation:** Sideload via MQDH or SideQuest  
+- **Unity Version:** Unity 6 (6000.0.x)  
+- **XR:** OpenXR enabled  
 
 ---
 
 # **🛠️ Technical Issues Encountered**
 
-### **High-Velocity Collision (Tunneling)**
+**High-Velocity Collision (Tunneling)**  
+Solved using continuous dynamic collision checks.
 
-Fast VR swings caused missed hits due to colliders passing through objects between physics updates.
-**Solution:** Switched from discrete collision detection to **continuous dynamic sweep-volume collision checks**.
+**Difficulty Balancing**  
+Enemy pacing and explosive mole frequency adjusted.
 
----
-
-### **Difficulty Balancing**
-
-Early builds overwhelmed players with fast enemies and frequent explosive moles.
-**Fix:** Reduced explosive mole frequency and slowed enemy pacing to emphasize skill and recognition.
-
----
-
-### **Physics Predictability**
-
-Racket impacts are sensitive to collision angles. An unresolved edge case remains where multiple collisions in a single frame can launch the ball unpredictably. Attempts included cooldown timers and temporary collision ignores.
+**Physics Predictability**  
+Edge cases remain with multi-collision frames.
 
 ---
 
 # **📦 Assets & Plugins Used**
 
-* **Unity XR Interaction Toolkit (XRI)** – Core VR interaction framework
-* **ProBuilder** – Arena and fence block-outs
-* **Fantasy Skybox FREE** – Stylized skybox
-* **Stylized Dirt/Ground Textures** – Poly Haven / AmbientCG
-* **Kenney Assets (Nature/Town)** – Background environment
-* **TextMeshPro** – UI text rendering
+- Unity XR Interaction Toolkit  
+- ProBuilder  
+- Fantasy Skybox FREE  
+- Poly Haven / AmbientCG  
+- Kenney Assets  
+- TextMeshPro  
 
 **Models & Audio**
+- Practice Dummy  
+- Stylized Shovel  
+- Baseball Bat  
+- Tennis Racket  
+- Mole Models  
+- Sound Effects Pack  
 
-* Practice Dummy (Low Poly)
-* Stylized Shovel
-* Baseball Bat
-* Tennis Racket
-* Mole Models
-* Sound Effects Pack
-
----
 
